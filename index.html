@@ -27,16 +27,16 @@ body{
 font-family:'Inter',sans-serif;
 background:#F7F9FB;
 color:#0B1F33;
-line-height:1.6;
+line-height:1.7;
 }
 
 .container{
 max-width:1150px;
 margin:auto;
-padding:0 25px;
+padding:0 24px;
 }
 
-/* ---------- NAVBAR ---------- */
+/* ---------- NAV ---------- */
 
 .navbar{
 position:fixed;
@@ -52,8 +52,8 @@ align-items:center;
 
 padding:14px 26px;
 
-background:rgba(255,255,255,0.7);
-backdrop-filter:blur(16px);
+background:rgba(255,255,255,0.75);
+backdrop-filter:blur(18px);
 
 border-radius:14px;
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
@@ -69,14 +69,13 @@ font-weight:600;
 
 .nav-links{
 display:flex;
-list-style:none;
 gap:24px;
+list-style:none;
 }
 
 .nav-links a{
 text-decoration:none;
 color:#0B1F33;
-font-weight:500;
 font-size:15px;
 transition:.3s;
 }
@@ -94,7 +93,7 @@ cursor:pointer;
 /* ---------- HERO ---------- */
 
 .hero{
-height:100vh;
+min-height:100vh;
 display:flex;
 align-items:center;
 
@@ -113,49 +112,62 @@ color:white;
 
 .hero-grid{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
+grid-template-columns:1.1fr 0.9fr;
+gap:50px;
 align-items:center;
 }
 
 .hero h1{
-font-size:52px;
+font-size:54px;
 font-family:'Playfair Display',serif;
 margin-bottom:20px;
 }
 
 .hero p{
 font-size:19px;
+opacity:.95;
 margin-bottom:28px;
 }
 
 .cta{
-padding:14px 28px;
+display:inline-block;
+padding:14px 30px;
 background:white;
 color:#0B1F33;
 border-radius:8px;
 text-decoration:none;
 font-weight:500;
+transition:.3s;
 }
 
-.hero img{
+.cta:hover{
+transform:translateY(-3px);
+box-shadow:0 15px 35px rgba(0,0,0,0.25);
+}
+
+.hero-img{
+position:relative;
+}
+
+.hero-img img{
 width:100%;
 border-radius:18px;
-box-shadow:0 25px 60px rgba(0,0,0,0.25);
+box-shadow:0 30px 70px rgba(0,0,0,0.3);
 }
 
 /* ---------- TRUST ---------- */
 
 .trust{
 background:white;
-padding:35px 0;
+padding:40px 0;
+border-bottom:1px solid #eee;
 }
 
 .trust-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
 text-align:center;
+gap:20px;
 font-size:14px;
 color:#4A5568;
 }
@@ -163,16 +175,16 @@ color:#4A5568;
 /* ---------- SECTION ---------- */
 
 .section{
-padding:100px 0;
+padding:110px 0;
 }
 
 .section-title{
 text-align:center;
-margin-bottom:60px;
+margin-bottom:70px;
 }
 
 .section-title h2{
-font-size:40px;
+font-size:42px;
 font-family:'Playfair Display',serif;
 }
 
@@ -191,15 +203,15 @@ gap:30px;
 
 .card{
 background:white;
-padding:35px;
-border-radius:16px;
-box-shadow:0 15px 35px rgba(0,0,0,0.05);
+padding:40px;
+border-radius:18px;
+box-shadow:0 20px 40px rgba(0,0,0,0.05);
 transition:.3s;
 }
 
 .card:hover{
 transform:translateY(-10px);
-box-shadow:0 25px 50px rgba(0,0,0,0.08);
+box-shadow:0 30px 60px rgba(0,0,0,0.08);
 }
 
 .card i{
@@ -213,56 +225,74 @@ margin-bottom:12px;
 .about{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:40px;
+gap:50px;
 align-items:center;
 }
 
 .about img{
 width:100%;
-border-radius:16px;
-}
-
-/* ---------- PRODUCTS ---------- */
-
-.products{
-background:#eef3f6;
-padding:100px 0;
-text-align:center;
-}
-
-.products a{
-display:inline-block;
-margin:10px;
-padding:12px 20px;
-background:#0B1F33;
-color:white;
-border-radius:6px;
-text-decoration:none;
+border-radius:18px;
 }
 
 /* ---------- CONTACT ---------- */
 
-.contact-form{
-max-width:500px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:14px;
+.contact{
+background:#0B1F33;
+color:white;
+padding:110px 0;
 }
 
-input,textarea{
+.contact-box{
+background:white;
+color:#0B1F33;
+max-width:700px;
+margin:auto;
+padding:50px;
+border-radius:18px;
+box-shadow:0 30px 60px rgba(0,0,0,0.15);
+}
+
+.contact-box h2{
+text-align:center;
+margin-bottom:25px;
+font-family:'Playfair Display',serif;
+}
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input, textarea{
 padding:14px;
-border-radius:6px;
+border-radius:8px;
 border:1px solid #ddd;
+font-family:'Inter';
+}
+
+button{
+padding:14px;
+border:none;
+border-radius:8px;
+background:#0B1F33;
+color:white;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#2BA6A6;
 }
 
 /* ---------- FOOTER ---------- */
 
 footer{
+padding:40px;
+text-align:center;
 background:#0B1F33;
 color:white;
-padding:50px 0;
-text-align:center;
+font-size:14px;
 }
 
 /* ---------- MOBILE ---------- */
@@ -319,8 +349,7 @@ grid-template-columns:1fr;
 </div>
 
 <ul class="nav-links">
-<li><a href="#help">How I Help</a></li>
-<li><a href="#products">Resources</a></li>
+<li><a href="#help">Services</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
@@ -336,19 +365,20 @@ grid-template-columns:1fr;
 <div class="hero-grid">
 
 <div>
+
 <h1>Health. Wealth. Freedom.</h1>
+
 <p>
 
-I’m Meshona — a nurse turned digital marketer helping families
-navigate healthcare decisions while building financial stability
-through education, advocacy, and digital resources.
+Nurse-led guidance helping families make confident healthcare decisions while building financial stability through education, advocacy, and digital resources.
 
 </p>
 
 <a href="#contact" class="cta">Work With Me</a>
+
 </div>
 
-<div>
+<div class="hero-img">
 <img src="assets/images/1339514787834276938.png" alt="Meshona">
 </div>
 
@@ -366,10 +396,10 @@ through education, advocacy, and digital resources.
 
 <div class="trust-grid">
 
-<div>Registered Nurse (Placeholder)</div>
+<div>Registered Nurse</div>
 <div>Healthcare Advocate</div>
-<div>Digital Educator</div>
 <div>Insurance Guidance</div>
+<div>Digital Educator</div>
 
 </div>
 
@@ -377,15 +407,17 @@ through education, advocacy, and digital resources.
 
 </section>
 
-<!-- HOW I HELP -->
+<!-- SERVICES -->
 
 <section id="help" class="section">
 
 <div class="container">
 
 <div class="section-title">
-<h2>How I Help</h2>
-<p>Advocating for the health and wealth of families</p>
+
+<h2>How I Support You</h2>
+<p>Guidance designed for real life, real families, and real decisions</p>
+
 </div>
 
 <div class="cards">
@@ -393,37 +425,24 @@ through education, advocacy, and digital resources.
 <div class="card">
 <i class="fa-solid fa-heart-pulse"></i>
 <h3>Healthcare Advocacy</h3>
-<p>Helping families navigate healthcare decisions before, during, and after major life events.</p>
+<p>Support navigating medical decisions and ensuring families are prepared at every stage of care.</p>
 </div>
 
 <div class="card">
 <i class="fa-solid fa-shield-heart"></i>
 <h3>Life Insurance Education</h3>
-<p>Ensuring families are financially protected and prepared.</p>
+<p>Helping you understand coverage options to protect your family’s future.</p>
 </div>
 
 <div class="card">
 <i class="fa-solid fa-laptop"></i>
-<h3>Digital Income Resources</h3>
-<p>Tools and education to build additional income streams.</p>
+<h3>Digital Resources</h3>
+<p>Practical tools and guides to help you create additional income and flexibility.</p>
 </div>
 
 </div>
 
 </div>
-
-</section>
-
-<!-- PRODUCTS -->
-
-<section id="products" class="products">
-
-<h2>Digital Resources</h2>
-
-<a href="https://beacons.ai/digitalnursemeshona" target="_blank">View All Resources</a>
-
-<a href="#">Free Guide (Placeholder)</a>
-<a href="#">Premium Product (Placeholder)</a>
 
 </section>
 
@@ -445,11 +464,11 @@ through education, advocacy, and digital resources.
 
 <p>
 
-I’m a nurse, mother, and digital entrepreneur passionate about building a life of freedom and purpose.
+I’m Meshona — a nurse, mother, and digital entrepreneur committed to helping families build healthier and more secure futures.
 
-After balancing healthcare, family, and personal growth, I realized the importance of creating income streams that support both stability and flexibility.
+Through my experience in healthcare and my journey into digital income, I’ve seen how important it is to have both clarity in medical decisions and confidence in financial stability.
 
-Now, I help others do the same — while advocating for better healthcare decisions along the way.
+My mission is to simplify both — so you can focus on living fully, not navigating confusion.
 
 </p>
 
@@ -463,23 +482,25 @@ Now, I help others do the same — while advocating for better healthcare decisi
 
 <!-- CONTACT -->
 
-<section id="contact" class="section">
+<section id="contact" class="contact">
 
 <div class="container">
 
-<div class="section-title">
-<h2>Contact</h2>
-</div>
+<div class="contact-box">
 
-<form class="contact-form" action="https://formspree.io/f/YOURCODE" method="POST">
+<h2>Let’s Connect</h2>
+
+<form class="contact-form" action="#" method="POST">
 
 <input type="text" placeholder="Name" required>
 <input type="email" placeholder="Email" required>
-<textarea placeholder="Message"></textarea>
+<textarea placeholder="How can I support you?"></textarea>
 
-<button type="submit">Send Message</button>
+<button type="submit">Submit Inquiry</button>
 
 </form>
+
+</div>
 
 </div>
 
@@ -492,13 +513,10 @@ Now, I help others do the same — while advocating for better healthcare decisi
 </footer>
 
 <script>
-
 function toggleMenu(){
 document.querySelector(".nav-links").classList.toggle("active");
 }
-
 </script>
 
 </body>
-
 </html>
