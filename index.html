@@ -31,7 +31,7 @@ line-height:1.6;
 }
 
 .container{
-max-width:1100px;
+max-width:1150px;
 margin:auto;
 padding:0 25px;
 }
@@ -39,12 +39,10 @@ padding:0 25px;
 /* ---------- NAVBAR ---------- */
 
 .navbar{
-
 position:fixed;
 top:18px;
 left:50%;
 transform:translateX(-50%);
-
 width:92%;
 max-width:1150px;
 
@@ -58,11 +56,9 @@ background:rgba(255,255,255,0.7);
 backdrop-filter:blur(16px);
 
 border-radius:14px;
-
 box-shadow:0 10px 30px rgba(0,0,0,0.08);
 
 z-index:999;
-
 }
 
 .logo{
@@ -89,8 +85,6 @@ transition:.3s;
 color:#2BA6A6;
 }
 
-/* hamburger */
-
 .menu-toggle{
 display:none;
 font-size:22px;
@@ -100,71 +94,54 @@ cursor:pointer;
 /* ---------- HERO ---------- */
 
 .hero{
-
 height:100vh;
-
 display:flex;
 align-items:center;
 
-background:linear-gradient(
--45deg,
-#0B1F33,
-#2BA6A6,
-#0B1F33,
-#2BA6A6
-);
-
+background:linear-gradient(-45deg,#0B1F33,#2BA6A6,#0B1F33,#2BA6A6);
 background-size:400% 400%;
 animation:gradientMove 14s ease infinite;
 
 color:white;
-
 }
 
 @keyframes gradientMove{
-
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
 100%{background-position:0% 50%;}
-
 }
 
-.hero-content{
-max-width:650px;
+.hero-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
 }
 
 .hero h1{
-font-size:56px;
+font-size:52px;
 font-family:'Playfair Display',serif;
 margin-bottom:20px;
 }
 
 .hero p{
-font-size:20px;
-margin-bottom:32px;
-opacity:.95;
+font-size:19px;
+margin-bottom:28px;
 }
 
 .cta{
-
-display:inline-block;
-padding:14px 30px;
-
+padding:14px 28px;
 background:white;
 color:#0B1F33;
-
 border-radius:8px;
-
-font-weight:500;
 text-decoration:none;
-
-transition:.3s;
-
+font-weight:500;
 }
 
-.cta:hover{
-transform:translateY(-3px);
-box-shadow:0 12px 25px rgba(0,0,0,.2);
+.hero img{
+width:100%;
+border-radius:18px;
+box-shadow:0 25px 60px rgba(0,0,0,0.25);
 }
 
 /* ---------- TRUST ---------- */
@@ -172,19 +149,15 @@ box-shadow:0 12px 25px rgba(0,0,0,.2);
 .trust{
 background:white;
 padding:35px 0;
-border-bottom:1px solid #eee;
 }
 
 .trust-grid{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:20px;
-
 text-align:center;
 font-size:14px;
 color:#4A5568;
-
 }
 
 /* ---------- SECTION ---------- */
@@ -211,151 +184,110 @@ color:#6B7280;
 /* ---------- CARDS ---------- */
 
 .cards{
-
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:32px;
-
+gap:30px;
 }
 
 .card{
-
 background:white;
-padding:40px;
-
+padding:35px;
 border-radius:16px;
-
 box-shadow:0 15px 35px rgba(0,0,0,0.05);
-
 transition:.3s;
-
 }
 
 .card:hover{
-
 transform:translateY(-10px);
 box-shadow:0 25px 50px rgba(0,0,0,0.08);
-
 }
 
 .card i{
-
-font-size:28px;
+font-size:26px;
 color:#2BA6A6;
-margin-bottom:16px;
-
-}
-
-.card h3{
-margin-bottom:10px;
-}
-
-/* ---------- LEAD ---------- */
-
-.lead{
-
-background:#0B1F33;
-color:white;
-
-padding:90px 0;
-text-align:center;
-
-}
-
-.lead input{
-
-padding:14px;
-width:260px;
-
-border-radius:6px;
-border:none;
-
-margin-right:10px;
-
-}
-
-.lead button{
-
-padding:14px 20px;
-
-border:none;
-border-radius:6px;
-
-background:#2BA6A6;
-color:white;
-
-cursor:pointer;
-
+margin-bottom:12px;
 }
 
 /* ---------- ABOUT ---------- */
 
 .about{
-max-width:720px;
-margin:auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:16px;
+}
+
+/* ---------- PRODUCTS ---------- */
+
+.products{
+background:#eef3f6;
+padding:100px 0;
 text-align:center;
-font-size:18px;
+}
+
+.products a{
+display:inline-block;
+margin:10px;
+padding:12px 20px;
+background:#0B1F33;
+color:white;
+border-radius:6px;
+text-decoration:none;
 }
 
 /* ---------- CONTACT ---------- */
 
 .contact-form{
-
 max-width:500px;
 margin:auto;
-
 display:flex;
 flex-direction:column;
 gap:14px;
-
 }
 
 input,textarea{
-
 padding:14px;
 border-radius:6px;
 border:1px solid #ddd;
-
 }
 
 /* ---------- FOOTER ---------- */
 
 footer{
-
 background:#0B1F33;
 color:white;
-
 padding:50px 0;
 text-align:center;
-
-font-size:14px;
-
 }
 
 /* ---------- MOBILE ---------- */
 
-@media (max-width:768px){
+@media(max-width:768px){
+
+.hero-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero h1{
+font-size:36px;
+}
 
 .nav-links{
-
 display:none;
-
 position:absolute;
 top:70px;
 left:0;
 right:0;
-
 background:white;
-
 flex-direction:column;
-align-items:center;
-
-padding:25px;
-
-border-radius:14px;
-
-box-shadow:0 15px 35px rgba(0,0,0,0.1);
-
+padding:20px;
+border-radius:12px;
 }
 
 .nav-links.active{
@@ -366,12 +298,8 @@ display:flex;
 display:block;
 }
 
-.hero h1{
-font-size:38px;
-}
-
-.hero p{
-font-size:17px;
+.about{
+grid-template-columns:1fr;
 }
 
 }
@@ -391,13 +319,10 @@ font-size:17px;
 </div>
 
 <ul class="nav-links">
-
 <li><a href="#help">How I Help</a></li>
-<li><a href="#insurance">Insurance</a></li>
-<li><a href="#resources">Resources</a></li>
+<li><a href="#products">Resources</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#contact">Contact</a></li>
-
 </ul>
 
 </nav>
@@ -408,17 +333,24 @@ font-size:17px;
 
 <div class="container">
 
-<div class="hero-content">
+<div class="hero-grid">
 
-<h1>Helping Families Navigate Healthcare & Insurance</h1>
-
+<div>
+<h1>Health. Wealth. Freedom.</h1>
 <p>
 
-Nurse-led education and guidance designed to help individuals understand healthcare systems, insurance coverage, and make informed medical decisions.
+I’m Meshona — a nurse turned digital marketer helping families
+navigate healthcare decisions while building financial stability
+through education, advocacy, and digital resources.
 
 </p>
 
-<a href="#contact" class="cta">Request Information</a>
+<a href="#contact" class="cta">Work With Me</a>
+</div>
+
+<div>
+<img src="assets/images/1339514787834276938.png" alt="Meshona">
+</div>
 
 </div>
 
@@ -435,9 +367,9 @@ Nurse-led education and guidance designed to help individuals understand healthc
 <div class="trust-grid">
 
 <div>Registered Nurse (Placeholder)</div>
-<div>Licensed Insurance Advisor (Placeholder)</div>
-<div>Healthcare Educator</div>
-<div>Patient Advocacy</div>
+<div>Healthcare Advocate</div>
+<div>Digital Educator</div>
+<div>Insurance Guidance</div>
 
 </div>
 
@@ -452,75 +384,28 @@ Nurse-led education and guidance designed to help individuals understand healthc
 <div class="container">
 
 <div class="section-title">
-
 <h2>How I Help</h2>
-<p>Guidance designed to simplify healthcare decisions</p>
-
+<p>Advocating for the health and wealth of families</p>
 </div>
 
 <div class="cards">
 
 <div class="card">
-<i class="fa-solid fa-user-doctor"></i>
-<h3>Understanding Medicare</h3>
-<p>Education on Medicare plans and enrollment periods.</p>
+<i class="fa-solid fa-heart-pulse"></i>
+<h3>Healthcare Advocacy</h3>
+<p>Helping families navigate healthcare decisions before, during, and after major life events.</p>
 </div>
-
-<div class="card">
-<i class="fa-solid fa-file-medical"></i>
-<h3>Choosing Health Insurance</h3>
-<p>Helping individuals understand policy options.</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-scale-balanced"></i>
-<h3>Patient Advocacy</h3>
-<p>Support navigating healthcare systems.</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-money-bill-wave"></i>
-<h3>Medical Bills</h3>
-<p>Understanding insurance coverage and costs.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- INSURANCE -->
-
-<section id="insurance" class="section" style="background:#eef3f6;">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>Insurance Guidance</h2>
-<p>Helping individuals make informed coverage decisions</p>
-
-</div>
-
-<div class="cards">
 
 <div class="card">
 <i class="fa-solid fa-shield-heart"></i>
-<h3>Life Insurance</h3>
-<p>Guidance understanding life insurance options.</p>
+<h3>Life Insurance Education</h3>
+<p>Ensuring families are financially protected and prepared.</p>
 </div>
 
 <div class="card">
-<i class="fa-solid fa-file-medical"></i>
-<h3>Policy Education</h3>
-<p>Breaking down insurance terminology.</p>
-</div>
-
-<div class="card">
-<i class="fa-solid fa-user-shield"></i>
-<h3>Coverage Review</h3>
-<p>Helping evaluate current policies.</p>
+<i class="fa-solid fa-laptop"></i>
+<h3>Digital Income Resources</h3>
+<p>Tools and education to build additional income streams.</p>
 </div>
 
 </div>
@@ -529,51 +414,16 @@ Nurse-led education and guidance designed to help individuals understand healthc
 
 </section>
 
-<!-- RESOURCES -->
+<!-- PRODUCTS -->
 
-<section id="resources" class="section">
+<section id="products" class="products">
 
-<div class="container">
+<h2>Digital Resources</h2>
 
-<div class="section-title">
+<a href="https://beacons.ai/digitalnursemeshona" target="_blank">View All Resources</a>
 
-<h2>Healthcare Resources</h2>
-<p>Educational content and guides</p>
-
-</div>
-
-<div class="cards">
-
-<div class="card">
-<h3>Medicare Basics</h3>
-<p>Placeholder educational article.</p>
-</div>
-
-<div class="card">
-<h3>Healthcare Navigation</h3>
-<p>Placeholder guide.</p>
-</div>
-
-<div class="card">
-<h3>Understanding Insurance</h3>
-<p>Placeholder content.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- LEAD -->
-
-<section class="lead">
-
-<h2>Free Healthcare Guide</h2>
-<p>Join the mailing list to receive educational healthcare resources.</p>
-
-<input type="email" placeholder="Email address">
-<button>Download Guide</button>
+<a href="#">Free Guide (Placeholder)</a>
+<a href="#">Premium Product (Placeholder)</a>
 
 </section>
 
@@ -583,17 +433,29 @@ Nurse-led education and guidance designed to help individuals understand healthc
 
 <div class="container">
 
-<div class="section-title">
+<div class="about">
+
+<div>
+<img src="assets/images/1339514787834276938.png">
+</div>
+
+<div>
 
 <h2>About Meshona</h2>
 
-</div>
+<p>
 
-<p class="about">
+I’m a nurse, mother, and digital entrepreneur passionate about building a life of freedom and purpose.
 
-Placeholder biography. Replace with professional background, nursing credentials, healthcare mission, and story.
+After balancing healthcare, family, and personal growth, I realized the importance of creating income streams that support both stability and flexibility.
+
+Now, I help others do the same — while advocating for better healthcare decisions along the way.
 
 </p>
+
+</div>
+
+</div>
 
 </div>
 
@@ -601,21 +463,18 @@ Placeholder biography. Replace with professional background, nursing credentials
 
 <!-- CONTACT -->
 
-<section id="contact" class="section" style="background:#eef3f6;">
+<section id="contact" class="section">
 
 <div class="container">
 
 <div class="section-title">
-
 <h2>Contact</h2>
-
 </div>
 
 <form class="contact-form" action="https://formspree.io/f/YOURCODE" method="POST">
 
 <input type="text" placeholder="Name" required>
 <input type="email" placeholder="Email" required>
-
 <textarea placeholder="Message"></textarea>
 
 <button type="submit">Send Message</button>
@@ -630,10 +489,6 @@ Placeholder biography. Replace with professional background, nursing credentials
 
 <p>© Digital Nurse Meshona</p>
 
-<p style="opacity:.7;margin-top:10px;">
-Licensing information • Privacy Policy • Healthcare Disclaimer
-</p>
-
 </footer>
 
 <script>
@@ -645,4 +500,5 @@ document.querySelector(".nav-links").classList.toggle("active");
 </script>
 
 </body>
+
 </html>
