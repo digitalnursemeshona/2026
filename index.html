@@ -8,17 +8,29 @@
 
 <title>Digital Nurse MeShona | Your Health. Your Wealth. Your Legacy.</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- =========================
+     GOOGLE FONTS
+     ========================= -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..800,0..100,0..1&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
 
 <script src="https://kit.fontawesome.com/4c0d8f7b63.js" crossorigin="anonymous"></script>
 
 
 <style>
 
+/* =========================================================
+   DIGITAL NURSE MESHONA
+   HOMEPAGE
+   ========================================================= */
+
+
 /* =========================
-DIGITAL NURSE MESHONA
-GLOBAL STYLES
-========================= */
+   RESET
+   ========================= */
 
 *{
     margin:0;
@@ -27,67 +39,132 @@ GLOBAL STYLES
     scroll-behavior:smooth;
 }
 
+
 :root{
-    --navy:#102A43;
+
+    --navy:#17324D;
+    --navy-dark:#10263A;
+
     --teal:#2BA6A6;
-    --light:#F8F7F3;
-    --gray:#52606D;
+    --teal-dark:#197979;
+
+    --cream:#F7F5EF;
+    --cream-dark:#ECE9E0;
+
     --white:#FFFFFF;
+
+    --gray:#65717A;
+    --line:rgba(23,50,77,.14);
+
 }
+
 
 body{
-    font-family:'Inter',sans-serif;
-    background:var(--light);
+
+    font-family:'Instrument Sans',sans-serif;
+
+    background:var(--cream);
+
     color:var(--navy);
-    line-height:1.7;
+
+    line-height:1.65;
+
+    overflow-x:hidden;
+
 }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
+
+a{
+    color:inherit;
 }
+
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+
+.container{
+
+    width:min(90%,1280px);
+
+    margin:auto;
+
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
 
 h1,
 h2,
-h3{
-    font-family:'Playfair Display',serif;
-    color:var(--navy);
+h3,
+.logo,
+.editorial-word{
+
+    font-family:'Fraunces',serif;
+
 }
 
-img{
-    width:100%;
-    display:block;
+
+h1{
+
+    font-variation-settings:
+    "SOFT" 55,
+    "WONK" 1;
+
 }
 
 
-/* =========================
-NAVIGATION
-========================= */
+h2{
+
+    font-variation-settings:
+    "SOFT" 35,
+    "WONK" 0;
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 .navbar{
 
     position:fixed;
-    top:20px;
+
+    top:22px;
     left:50%;
+
     transform:translateX(-50%);
 
-    width:90%;
-    max-width:1200px;
+    width:min(92%,1180px);
+
+    padding:15px 22px 15px 26px;
 
     display:flex;
-    justify-content:space-between;
+
     align-items:center;
 
-    padding:16px 30px;
+    justify-content:space-between;
 
-    background:rgba(255,255,255,.92);
+    background:rgba(255,255,255,.90);
+
     backdrop-filter:blur(20px);
 
-    border-radius:20px;
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(23,50,77,.08);
+
+    border-radius:100px;
 
     box-shadow:
-    0 15px 40px rgba(0,0,0,.08);
+    0 18px 50px rgba(16,38,58,.10);
 
     z-index:1000;
 
@@ -96,9 +173,20 @@ NAVIGATION
 
 .logo{
 
-    font-family:'Playfair Display',serif;
-    font-size:24px;
+    font-size:22px;
+
     font-weight:700;
+
+    text-decoration:none;
+
+    letter-spacing:-.035em;
+
+}
+
+
+.logo span{
+
+    color:var(--teal);
 
 }
 
@@ -106,7 +194,11 @@ NAVIGATION
 .nav-links{
 
     display:flex;
+
+    align-items:center;
+
     gap:30px;
+
     list-style:none;
 
 }
@@ -115,9 +207,14 @@ NAVIGATION
 .nav-links a{
 
     text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:500;
+
     color:var(--navy);
-    font-size:15px;
-    transition:.3s;
+
+    transition:.25s ease;
 
 }
 
@@ -129,41 +226,249 @@ NAVIGATION
 }
 
 
+.nav-cta{
+
+    padding:10px 18px;
+
+    border-radius:100px;
+
+    background:var(--navy);
+
+    color:white !important;
+
+}
+
+
+.nav-cta:hover{
+
+    background:var(--teal);
+
+}
+
+
 .menu-toggle{
 
     display:none;
-    font-size:24px;
+
+    border:0;
+
+    background:none;
+
+    color:var(--navy);
+
+    font-size:22px;
+
     cursor:pointer;
 
 }
 
 
+/* =========================================================
+   HERO
+   ========================================================= */
 
-/* =========================
-BUTTONS
-========================= */
+.hero{
+
+    min-height:100vh;
+
+    padding:150px 0 90px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+}
+
+
+/* subtle editorial background detail */
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+
+    height:600px;
+
+    border-radius:50%;
+
+    background:rgba(43,166,166,.08);
+
+    top:-220px;
+
+    right:-180px;
+
+}
+
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(23,50,77,.10);
+
+    bottom:-150px;
+
+    left:-120px;
+
+}
+
+
+.hero-grid{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:90px;
+
+    align-items:center;
+
+}
+
+
+.hero-copy{
+
+    max-width:720px;
+
+}
+
+
+.eyebrow{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:28px;
+
+    color:var(--teal-dark);
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+}
+
+
+.eyebrow::before{
+
+    content:"";
+
+    width:38px;
+
+    height:1px;
+
+    background:var(--teal);
+
+}
+
+
+.hero h1{
+
+    font-size:clamp(62px,7.5vw,108px);
+
+    line-height:.90;
+
+    letter-spacing:-.055em;
+
+    max-width:850px;
+
+    margin-bottom:38px;
+
+}
+
+
+.hero h1 em{
+
+    font-style:normal;
+
+    color:var(--teal);
+
+}
+
+
+.hero-description{
+
+    max-width:590px;
+
+    font-size:18px;
+
+    color:var(--gray);
+
+    line-height:1.75;
+
+    margin-bottom:38px;
+
+}
+
+
+.hero-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+}
 
 
 .btn{
 
-    display:inline-block;
+    display:inline-flex;
 
-    padding:15px 35px;
+    align-items:center;
 
-    border-radius:50px;
+    justify-content:center;
+
+    gap:10px;
+
+    min-height:50px;
+
+    padding:0 23px;
+
+    border-radius:100px;
 
     text-decoration:none;
 
-    font-weight:600;
+    font-size:14px;
 
-    transition:.3s;
+    font-weight:700;
+
+    transition:.3s ease;
 
 }
 
 
 .btn-primary{
 
-    background:var(--teal);
+    background:var(--navy);
+
     color:white;
 
 }
@@ -171,1563 +476,1796 @@ BUTTONS
 
 .btn-primary:hover{
 
-    transform:translateY(-4px);
+    background:var(--teal);
+
+    transform:translateY(-3px);
 
     box-shadow:
-    0 15px 30px rgba(43,166,166,.35);
+    0 12px 25px rgba(43,166,166,.22);
 
 }
 
 
-.btn-secondary{
+.btn-outline{
+
+    border:1px solid var(--line);
+
+    color:var(--navy);
+
+    background:transparent;
+
+}
+
+
+.btn-outline:hover{
+
+    border-color:var(--teal);
+
+    color:var(--teal);
+
+    transform:translateY(-3px);
+
+}
+
+
+/* =========================================================
+   HERO PORTRAIT
+   ========================================================= */
+
+.hero-visual{
+
+    position:relative;
+
+}
+
+
+.portrait-frame{
+
+    position:relative;
+
+    max-width:470px;
+
+    margin-left:auto;
+
+}
+
+
+.portrait-frame::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:18px -18px -18px 18px;
+
+    border:1px solid var(--teal);
+
+    border-radius:4px;
+
+    z-index:0;
+
+}
+
+
+.portrait-frame img{
+
+    position:relative;
+
+    z-index:1;
+
+    aspect-ratio:4 / 5;
+
+    object-fit:cover;
+
+    border-radius:4px;
+
+}
+
+
+.portrait-note{
+
+    position:absolute;
+
+    z-index:3;
+
+    left:-42px;
+
+    bottom:35px;
+
+    width:150px;
+
+    padding:17px;
+
+    background:var(--navy);
+
+    color:white;
+
+    box-shadow:
+    0 20px 40px rgba(16,38,58,.20);
+
+}
+
+
+.portrait-note span{
+
+    display:block;
+
+    font-size:10px;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+
+    opacity:.65;
+
+    margin-bottom:7px;
+
+}
+
+
+.portrait-note strong{
+
+    font-family:'Fraunces',serif;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    line-height:1.15;
+
+}
+
+
+/* =========================================================
+   INTRO / ABOUT
+   ========================================================= */
+
+.introduction{
+
+    padding:130px 0;
 
     background:white;
+
+}
+
+
+.intro-grid{
+
+    display:grid;
+
+    grid-template-columns:.65fr 1.35fr;
+
+    gap:100px;
+
+    align-items:start;
+
+}
+
+
+.section-label{
+
+    font-size:11px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.18em;
+
+    color:var(--teal-dark);
+
+}
+
+
+.intro-content{
+
+    max-width:850px;
+
+}
+
+
+.intro-content h2{
+
+    font-size:clamp(42px,5vw,70px);
+
+    line-height:.98;
+
+    letter-spacing:-.045em;
+
+    margin-bottom:30px;
+
+}
+
+
+.intro-content h2 span{
+
+    color:var(--teal);
+
+}
+
+
+.intro-content p{
+
+    max-width:720px;
+
+    color:var(--gray);
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-bottom:22px;
+
+}
+
+
+.signature{
+
+    margin-top:38px;
+
+    font-family:'Fraunces',serif;
+
+    font-size:28px;
+
+    font-style:italic;
+
     color:var(--navy);
 
 }
 
 
-.btn-secondary:hover{
+/* =========================================================
+   DESTINATION SECTION
+   ========================================================= */
 
-    transform:translateY(-4px);
+.destinations{
+
+    padding:130px 0;
+
+    background:var(--cream);
 
 }
 
 
-
-/* =========================
-HERO
-========================= */
-
-
-.hero{
-
-    min-height:100vh;
+.destination-heading{
 
     display:flex;
-    align-items:center;
 
-    background:
-    linear-gradient(
-    135deg,
-    #102A43,
-    #176B87,
-    #2BA6A6
-    );
+    align-items:end;
 
-    color:white;
+    justify-content:space-between;
 
-    padding-top:100px;
+    gap:40px;
+
+    margin-bottom:55px;
 
 }
 
 
-.hero-grid{
+.destination-heading h2{
+
+    max-width:700px;
+
+    font-size:clamp(45px,5vw,72px);
+
+    line-height:.95;
+
+    letter-spacing:-.045em;
+
+}
+
+
+.destination-heading p{
+
+    max-width:340px;
+
+    color:var(--gray);
+
+    font-size:15px;
+
+}
+
+
+.destination-grid{
 
     display:grid;
 
-    grid-template-columns:
-    1.1fr .9fr;
+    grid-template-columns:1fr 1fr;
 
-    gap:60px;
+    gap:22px;
+
+}
+
+
+.destination-card{
+
+    position:relative;
+
+    min-height:470px;
+
+    padding:42px;
+
+    overflow:hidden;
+
+    text-decoration:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    transition:.4s ease;
+
+}
+
+
+.destination-card:hover{
+
+    transform:translateY(-7px);
+
+}
+
+
+.destination-card.scholarships{
+
+    background:var(--navy);
+
+    color:white;
+
+}
+
+
+.destination-card.newsletter{
+
+    background:white;
+
+    color:var(--navy);
+
+    border:1px solid var(--line);
+
+}
+
+
+/* giant editorial numbers */
+
+.destination-number{
+
+    position:absolute;
+
+    right:-20px;
+
+    bottom:-85px;
+
+    font-family:'Fraunces',serif;
+
+    font-size:250px;
+
+    line-height:1;
+
+    opacity:.07;
+
+    pointer-events:none;
+
+}
+
+
+.destination-card.scholarships .destination-number{
+
+    color:white;
+
+}
+
+
+.destination-card.newsletter .destination-number{
+
+    color:var(--navy);
+
+}
+
+
+.destination-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+}
+
+
+.destination-type{
+
+    font-size:10px;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+    font-weight:700;
+
+    opacity:.65;
+
+}
+
+
+.destination-arrow{
+
+    width:42px;
+
+    height:42px;
+
+    border:1px solid currentColor;
+
+    border-radius:50%;
+
+    display:flex;
 
     align-items:center;
 
-}
+    justify-content:center;
 
-
-.hero h1{
-
-    color:white;
-
-    font-size:64px;
-
-    line-height:1.1;
-
-    margin-bottom:25px;
+    transition:.3s ease;
 
 }
 
 
-.hero p{
+.destination-card:hover .destination-arrow{
+
+    transform:rotate(45deg);
+
+}
+
+
+.destination-card h3{
+
+    position:relative;
+
+    z-index:2;
+
+    font-size:clamp(38px,4vw,62px);
+
+    line-height:.95;
+
+    letter-spacing:-.045em;
+
+    max-width:520px;
+
+    margin-bottom:20px;
+
+}
+
+
+.destination-card p{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:470px;
+
+    font-size:16px;
+
+    line-height:1.7;
+
+    opacity:.78;
+
+}
+
+
+.destination-link{
+
+    position:relative;
+
+    z-index:2;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:30px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    text-transform:uppercase;
+
+    letter-spacing:.10em;
+
+}
+
+
+/* =========================================================
+   BRAND STATEMENT
+   ========================================================= */
+
+.statement{
+
+    padding:155px 0;
+
+    background:var(--teal);
 
     color:white;
 
-    font-size:20px;
+    position:relative;
 
-    max-width:620px;
+    overflow:hidden;
+
+}
+
+
+.statement::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:50%;
+
+    right:-200px;
+
+    top:-150px;
+
+}
+
+
+.statement-inner{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:1050px;
+
+}
+
+
+.statement-label{
+
+    display:block;
 
     margin-bottom:35px;
 
+    font-size:11px;
+
+    letter-spacing:.2em;
+
+    text-transform:uppercase;
+
+    font-weight:700;
+
+    opacity:.75;
+
 }
 
 
-.hero-buttons{
+.statement h2{
+
+    font-size:clamp(48px,6.5vw,90px);
+
+    line-height:.95;
+
+    letter-spacing:-.055em;
+
+    color:white;
+
+}
+
+
+.statement h2 em{
+
+    font-style:normal;
+
+    font-weight:500;
+
+}
+
+
+.statement-sub{
+
+    max-width:600px;
+
+    margin-top:40px;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+    opacity:.88;
+
+}
+
+
+/* =========================================================
+   SMALL CONNECT SECTION
+   ========================================================= */
+
+.connect{
+
+    padding:100px 0;
+
+    background:white;
+
+}
+
+
+.connect-inner{
 
     display:flex;
-    gap:20px;
-
-}
-
-
-.hero-image img{
-
-    border-radius:35px;
-
-    box-shadow:
-    0 40px 90px rgba(0,0,0,.35);
-
-}
-
-
-
-/* =========================
-CREDENTIALS
-========================= */
-
-
-.credentials{
-
-    background:white;
-
-    padding:40px 0;
-
-}
-
-
-.credentials-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(4,1fr);
-
-    gap:25px;
-
-    text-align:center;
-
-}
-
-
-.credential{
-
-    font-weight:600;
-
-}
-
-
-.credential i{
-
-    color:var(--teal);
-
-    font-size:30px;
-
-    margin-bottom:10px;
-
-}
-
-
-
-/* =========================
-SECTIONS
-========================= */
-
-
-.section{
-
-    padding:110px 0;
-
-}
-
-
-.section-header{
-
-    text-align:center;
-
-    max-width:800px;
-
-    margin:
-    0 auto 70px;
-
-}
-
-
-.section-header h2{
-
-    font-size:46px;
-
-    margin-bottom:20px;
-
-}
-
-
-.section-header p{
-
-    color:var(--gray);
-
-    font-size:18px;
-
-}
-
-
-
-/* =========================
-CARDS
-========================= */
-
-
-.cards{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
-
-    gap:30px;
-
-}
-
-
-.card{
-
-    background:white;
-
-    padding:40px;
-
-    border-radius:25px;
-
-    box-shadow:
-    0 20px 45px rgba(0,0,0,.06);
-
-    transition:.3s;
-
-}
-
-
-.card:hover{
-
-    transform:translateY(-8px);
-
-}
-
-
-.card i{
-
-    color:var(--teal);
-
-    font-size:32px;
-
-    margin-bottom:20px;
-
-}
-
-
-.card h3{
-
-    font-size:26px;
-
-    margin-bottom:15px;
-
-}
-
-
-.card p{
-
-    color:var(--gray);
-
-}
-
-
-
-/* =========================
-METHOD SECTION
-========================= */
-
-
-.method{
-
-    background:var(--navy);
-
-}
-
-
-.method .section-header h2,
-.method .section-header p{
-
-    color:white;
-
-}
-
-
-.method .card{
-
-    background:white;
-
-}
-
-
-
-/* =========================
-FEATURE OFFER
-========================= */
-
-
-.featured{
-
-    padding:120px 20px;
-
-    background:var(--teal);
-
-    text-align:center;
-
-    color:white;
-
-}
-
-
-.featured h2{
-
-    color:white;
-
-    font-size:50px;
-
-}
-
-
-.featured p{
-
-    max-width:700px;
-
-    margin:25px auto 35px;
-
-    font-size:18px;
-
-}
-
-
-
-/* =========================
-ABOUT
-========================= */
-
-
-.about{
-
-    display:grid;
-
-    grid-template-columns:
-    1fr 1fr;
-
-    gap:60px;
 
     align-items:center;
 
-}
+    justify-content:space-between;
 
+    gap:50px;
 
-.about img{
+    padding-bottom:65px;
 
-    border-radius:35px;
-
-}
-
-
-.about p{
-
-    margin-bottom:18px;
+    border-bottom:1px solid var(--line);
 
 }
 
 
+.connect h2{
 
-/* =========================
-CONTACT
-========================= */
+    font-size:clamp(40px,5vw,65px);
+
+    line-height:1;
+
+    letter-spacing:-.045em;
+
+}
 
 
-.contact{
+.connect p{
+
+    max-width:420px;
+
+    color:var(--gray);
+
+    font-size:15px;
+
+}
+
+
+.socials{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:30px;
+
+}
+
+
+.socials a{
+
+    width:42px;
+
+    height:42px;
+
+    border:1px solid var(--line);
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-decoration:none;
+
+    transition:.25s ease;
+
+}
+
+
+.socials a:hover{
 
     background:var(--navy);
 
-    padding:110px 0;
-
-}
-
-
-.contact-box{
-
-    max-width:700px;
-
-    margin:auto;
-
-    background:white;
-
-    padding:50px;
-
-    border-radius:30px;
-
-}
-
-
-input,
-textarea{
-
-    width:100%;
-
-    padding:15px;
-
-    margin-bottom:15px;
-
-    border:
-
-    border:1px solid #ddd;
-
-    border-radius:12px;
-
-    font-family:inherit;
-
-}
-
-
-button{
-
-    background:var(--teal);
-
     color:white;
 
-    border:none;
+    border-color:var(--navy);
 
-    padding:15px 35px;
-
-    border-radius:50px;
-
-    cursor:pointer;
+    transform:translateY(-3px);
 
 }
 
 
-
-/* =========================
-FOOTER
-========================= */
-
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 footer{
 
-    background:#081C2C;
+    background:var(--navy-dark);
 
     color:white;
 
-    text-align:center;
-
-    padding:40px;
+    padding:55px 0 35px;
 
 }
 
 
+.footer-top{
 
-/* =========================
-MOBILE
-========================= */
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:50px;
+
+    padding-bottom:50px;
+
+}
+
+
+.footer-brand{
+
+    font-family:'Fraunces',serif;
+
+    font-size:32px;
+
+    letter-spacing:-.04em;
+
+}
+
+
+.footer-brand span{
+
+    color:var(--teal);
+
+}
+
+
+.footer-tagline{
+
+    margin-top:10px;
+
+    color:rgba(255,255,255,.55);
+
+    font-size:14px;
+
+}
+
+
+.footer-links{
+
+    display:flex;
+
+    gap:28px;
+
+    list-style:none;
+
+}
+
+
+.footer-links a{
+
+    color:rgba(255,255,255,.75);
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    transition:.25s ease;
+
+}
+
+
+.footer-links a:hover{
+
+    color:white;
+
+}
+
+
+.footer-bottom{
+
+    padding-top:25px;
+
+    border-top:1px solid rgba(255,255,255,.10);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    color:rgba(255,255,255,.45);
+
+    font-size:12px;
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:900px){
+
+    .hero{
+
+        padding-top:135px;
+
+    }
+
+
+    .hero-grid{
+
+        grid-template-columns:1fr;
+
+        gap:70px;
+
+    }
+
+
+    .hero-copy{
+
+        max-width:760px;
+
+    }
+
+
+    .portrait-frame{
+
+        margin:0 auto;
+
+        max-width:480px;
+
+    }
+
+
+    .intro-grid{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+
+    }
+
+
+    .destination-heading{
+
+        display:block;
+
+    }
+
+
+    .destination-heading p{
+
+        margin-top:25px;
+
+    }
+
+
+    .connect-inner{
+
+        display:block;
+
+    }
+
+
+    .connect-inner .btn{
+
+        margin-top:30px;
+
+    }
+
+}
 
 
 @media(max-width:768px){
 
+    .navbar{
 
-.hero-grid,
-.about{
+        top:12px;
 
-    grid-template-columns:1fr;
+        padding:13px 17px 13px 20px;
 
-    text-align:center;
+    }
+
+
+    .logo{
+
+        font-size:20px;
+
+    }
+
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+
+    .nav-links.active{
+
+        position:absolute;
+
+        top:65px;
+
+        right:0;
+
+        width:230px;
+
+        padding:25px;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+        background:white;
+
+        border-radius:20px;
+
+        box-shadow:
+        0 20px 50px rgba(16,38,58,.15);
+
+    }
+
+
+    .nav-cta{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+
+    .hero{
+
+        padding:120px 0 75px;
+
+    }
+
+
+    .hero h1{
+
+        font-size:clamp(55px,15vw,82px);
+
+    }
+
+
+    .hero-description{
+
+        font-size:16px;
+
+    }
+
+
+    .hero-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+
+    .hero-actions .btn{
+
+        width:100%;
+
+    }
+
+
+    .portrait-note{
+
+        left:-8px;
+
+        bottom:20px;
+
+    }
+
+
+    .introduction,
+    .destinations{
+
+        padding:90px 0;
+
+    }
+
+
+    .intro-content h2{
+
+        font-size:48px;
+
+    }
+
+
+    .destination-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .destination-card{
+
+        min-height:400px;
+
+        padding:30px;
+
+    }
+
+
+    .destination-card h3{
+
+        font-size:46px;
+
+    }
+
+
+    .statement{
+
+        padding:100px 0;
+
+    }
+
+
+    .statement h2{
+
+        font-size:54px;
+
+    }
+
+
+    .connect{
+
+        padding:80px 0;
+
+    }
+
+
+    .footer-top{
+
+        display:block;
+
+    }
+
+
+    .footer-links{
+
+        margin-top:35px;
+
+        flex-wrap:wrap;
+
+    }
+
+
+    .footer-bottom{
+
+        display:block;
+
+    }
+
+
+    .footer-bottom p + p{
+
+        margin-top:8px;
+
+    }
 
 }
 
-
-.hero h1{
-
-    font-size:40px;
-
-}
-
-
-.hero-buttons{
-
-    flex-direction:column;
-
-}
-
-
-.credentials-grid{
-
-    grid-template-columns:
-    1fr 1fr;
-
-}
-
-
-.nav-links{
-
-    display:none;
-
-}
-
-
-.nav-links.active{
-
-    display:flex;
-
-    position:absolute;
-
-    top:70px;
-
-    right:0;
-
-    width:230px;
-
-    flex-direction:column;
-
-    background:white;
-
-    padding:25px;
-
-    border-radius:20px;
-
-    box-shadow:
-    0 20px 50px rgba(0,0,0,.15);
-
-}
-
-
-.menu-toggle{
-
-    display:block;
-
-}
-
-
-}
 
 </style>
 
 </head>
 
+
 <body>
-<!-- =====================
-CREDENTIAL BAR
-===================== -->
-<!-- =====================
-CREDENTIAL BAR
-===================== -->
 
-<section class="credentials">
 
-<div class="container">
+<!-- =========================================================
+     NAVIGATION
+     ========================================================= -->
 
-<div class="credentials-grid">
+<nav class="navbar">
 
+    <a href="index.html" class="logo">
+        Digital Nurse <span>MeShona</span>
+    </a>
 
-<div class="credential">
 
-<i class="fa-solid fa-user-nurse"></i>
+    <ul class="nav-links">
 
-<br>
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
 
-Nurse-Led Guidance
+        <li>
+            <a href="scholarships.html">
+                Scholarships & Money
+            </a>
+        </li>
 
-</div>
+        <li>
+            <a href="newsletter.html">
+                Newsletter
+            </a>
+        </li>
 
+        <li>
+            <a href="#connect">
+                Connect
+            </a>
+        </li>
 
-<div class="credential">
+    </ul>
 
-<i class="fa-solid fa-heart-pulse"></i>
 
-<br>
+    <button
+        class="menu-toggle"
+        onclick="toggleMenu()"
+        aria-label="Open navigation menu">
 
-Healthcare Advocacy
+        <i class="fa-solid fa-bars"></i>
 
-</div>
+    </button>
 
+</nav>
 
-<div class="credential">
 
-<i class="fa-solid fa-shield-heart"></i>
 
-<br>
+<!-- =========================================================
+     HERO
+     ========================================================= -->
 
-Family Protection
+<header class="hero">
 
-</div>
+    <div class="container">
 
+        <div class="hero-grid">
 
-<div class="credential">
 
-<i class="fa-solid fa-chart-line"></i>
+            <div class="hero-copy">
 
-<br>
 
-Financial Growth
+                <div class="eyebrow">
+                    Digital Nurse MeShona
+                </div>
 
-</div>
 
+                <h1>
 
-</div>
+                    Your health.<br>
 
-</div>
+                    Your wealth.<br>
 
-</section>
+                    Your <em>legacy.</em>
 
+                </h1>
 
 
-<!-- =====================
-WHY DIGITAL NURSE MESHONA EXISTS
-===================== -->
+                <p class="hero-description">
 
+                    Healthcare education, financial resources,
+                    opportunities, and practical insight —
+                    brought together by Meshona, a nurse,
+                    mother, and entrepreneur.
 
-<section class="section">
+                </p>
 
 
-<div class="container">
+                <div class="hero-actions">
 
+                    <a
+                        href="#about"
+                        class="btn btn-primary">
 
-<div class="section-header">
+                        Meet Meshona
 
+                        <i class="fa-solid fa-arrow-down"></i>
 
-<h2>
-Life Doesn't Come With A Warning. Preparation Changes Everything.
-</h2>
+                    </a>
 
 
-<p>
-Healthcare decisions, financial challenges, and unexpected life events can happen when we least expect them. Having the right knowledge, resources, and preparation can help you move forward with confidence.
-</p>
+                    <a
+                        href="newsletter.html"
+                        class="btn btn-outline">
 
+                        Read The Digital Nurse Letter
 
-</div>
+                    </a>
 
+                </div>
 
 
-<div class="cards">
+            </div>
 
 
 
-<div class="card">
+            <div class="hero-visual">
 
-<i class="fa-solid fa-heart"></i>
+                <div class="portrait-frame">
 
-<h3>
-Protect Your Family
-</h3>
+                    <img
+                        src="assets/images/1339514787834276938.png"
+                        alt="Meshona Mitchell, founder of Digital Nurse MeShona">
 
-<p>
-Understand healthcare options and prepare for the moments when the people you love need you most.
-</p>
+                    <div class="portrait-note">
 
-</div>
+                        <span>
+                            Nurse. Mother. Entrepreneur.
+                        </span>
 
+                        <strong>
+                            Knowledge changes what comes next.
+                        </strong>
 
+                    </div>
 
+                </div>
 
-<div class="card">
+            </div>
 
-<i class="fa-solid fa-lightbulb"></i>
 
-<h3>
-Build Confidence
-</h3>
-
-<p>
-Gain knowledge and resources that help you make informed decisions about your health, finances, and future.
-</p>
-
-</div>
-
-
-
-
-
-<div class="card">
-
-<i class="fa-solid fa-seedling"></i>
-
-<h3>
-Create Opportunities
-</h3>
-
-<p>
-Explore digital resources and financial education designed to help you build new possibilities.
-</p>
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<!-- =====================
-DIGITAL NURSE METHOD
-===================== -->
-
-
-<section id="method" class="section method">
-
-
-<div class="container">
-
-
-<div class="section-header">
-
-
-<h2>
-The Digital Nurse Method
-</h2>
-
-
-<p>
-A simple framework designed to help you understand, prepare, and build toward a stronger future.
-</p>
-
-
-</div>
-
-
-
-<div class="cards">
-
-
-<div class="card">
-
-
-<i class="fa-solid fa-book-open"></i>
-
-
-<h3>
-01. Understand
-</h3>
-
-
-<p>
-Healthcare can feel overwhelming. Through education and guidance, we help you better understand your options and make confident choices.
-</p>
-
-
-</div>
-
-
-
-
-<div class="card">
-
-
-<i class="fa-solid fa-shield-heart"></i>
-
-
-<h3>
-02. Prepare
-</h3>
-
-
-<p>
-Life can change quickly. Preparation helps protect your family, your finances, and your peace of mind.
-</p>
-
-
-</div>
-
-
-
-
-<div class="card">
-
-
-<i class="fa-solid fa-arrow-trend-up"></i>
-
-
-<h3>
-03. Build
-</h3>
-
-
-<p>
-Access digital tools, resources, and opportunities designed to help you grow personally and financially.
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<!-- =====================
-SOLUTIONS
-===================== -->
-
-
-<section id="services" class="section">
-
-
-<div class="container">
-
-
-<div class="section-header">
-
-
-<h2>
-How I Support You
-</h2>
-
-
-<p>
-Personalized education and resources designed around your health, financial goals, and future.
-</p>
-
-
-</div>
-
-
-
-
-<div class="cards">
-
-
-
-<div class="card">
-
-
-<i class="fa-solid fa-stethoscope"></i>
-
-
-<h3>
-Healthcare Advocacy & Guidance
-</h3>
-
-
-<p>
-Navigate healthcare decisions with greater understanding and confidence through nurse-led education and support.
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<i class="fa-solid fa-file-shield"></i>
-
-
-<h3>
-Life Insurance Education
-</h3>
-
-
-<p>
-Learn why protection planning matters and how preparing today can help safeguard the people and goals you care about.
-</p>
-
-
-</div>
-
-
-
-
-
-<div class="card">
-
-
-<i class="fa-solid fa-laptop"></i>
-
-
-<h3>
-Digital Income & Resources
-</h3>
-
-
-<p>
-Explore digital tools, educational resources, and opportunities designed to support financial growth and flexibility.
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<!-- =====================
-FEATURED PROGRAM
-===================== -->
-
-
-<section class="featured">
-
-
-<div class="container">
-
-
-<h2>
-SWC 2.0 — The Level Up
-</h2>
-
-
-<p>
-Build your digital income foundation with education, tools, and strategies designed to help you explore additional income opportunities and expand your financial possibilities.
-</p>
-
-
-
-<a 
-href="https://shop.beacons.ai/ladysteph_creates/32ad246b-2c1f-4af9-85be-caa79424c302"
-target="_blank"
-class="btn btn-secondary">
-
-Explore SWC 2.0
-
-</a>
-
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<!-- =====================
-RESOURCES
-===================== -->
-
-
-<section id="resources" class="section">
-
-
-<div class="container">
-
-
-<div class="section-header">
-
-
-<h2>
-Resources & Tools
-</h2>
-
-
-<p>
-Education creates confidence. Explore resources designed to help you protect your health, strengthen your finances, and move forward.
-</p>
-
-
-</div>
-
-
-
-
-<div class="cards">
-
-
-
-<div class="card">
-
-
-<i class="fa-solid fa-file-medical"></i>
-
-
-<h3>
-Embrace The Space Freebie
-</h3>
-
-
-<p>
-Learn important healthcare considerations and become more prepared for the decisions ahead.
-</p>
-
-
-<a href="https://shop.beacons.ai/digitalnursemeshona/7e440d9e-543e-4a78-b554-c2a13a3169b3"
-target="_blank"
-class="btn btn-primary">
-
-Access Guide
-
-</a>
-
-
-</div>
-
-
-
-
-
-
-<div class="card">
-
-
-<i class="fa-solid fa-rocket"></i>
-
-
-<h3>
-Free look inside SWC 2.0
-</h3>
-
-
-<p>
-Discover foundational resources designed to introduce digital income concepts and opportunities.
-</p>
-
-
-<a href="https://shop.beacons.ai/digitalnursemeshona/4ffca96e-1fc2-4c54-a2cb-e22186965431"
-target="_blank"
-class="btn btn-primary">
-
-Get Started
-
-</a>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-
-<i class="fa-solid fa-gem"></i>
-
-
-<h3>
-Premium Resources
-</h3>
-
-
-<p>
-Unlock additional tools and education to support your personal growth journey.
-</p>
-
-
-<a href="https://shop.beacons.ai/digitalnursemeshona/6ad5a32f-7fe3-4599-9e3f-435e6b28318a"
-target="_blank"
-class="btn btn-primary">
-
-coming soon...
-
-</a>
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
-
-</section>
-</section>
-
-<!-- =====================
-NURSING SCHOLARSHIPS
-===================== -->
-
-<div class="cards">
-
-    <div class="card">
-
-        <i class="fa-solid fa-graduation-cap"></i>
-
-        <h3>100+ Nursing Scholarships</h3>
-
-        <p>
-        Browse an extensive list of scholarships available for nursing students throughout the United States, updated monthly.
-        </p>
-
-        <a
-        href="https://scholarshipowl.com/scholarship-list/by-major/nursing-scholarships"
-        target="_blank"
-        class="btn btn-primary">
-
-        View Scholarships
-
-        </a>
+        </div>
 
     </div>
 
-    <div class="card">
+</header>
 
-        <i class="fa-solid fa-heart-pulse"></i>
 
-        <h3>Johnson & Johnson Nursing</h3>
 
-        <p>
-        Explore scholarship and grant opportunities curated specifically for current and future nurses.
-        </p>
+<!-- =========================================================
+     ABOUT / INTRODUCTION
+     ========================================================= -->
 
-        <a
-        href="https://nursing.jnj.com/scholarships"
-        target="_blank"
-        class="btn btn-primary">
+<section
+    id="about"
+    class="introduction">
 
-        Browse Grants
 
-        </a>
+    <div class="container">
+
+
+        <div class="intro-grid">
+
+
+            <div>
+
+                <span class="section-label">
+                    About Meshona
+                </span>
+
+            </div>
+
+
+            <div class="intro-content">
+
+
+                <h2>
+
+                    Life doesn't come with a warning.
+                    <span>Preparation changes everything.</span>
+
+                </h2>
+
+
+                <p>
+
+                    Digital Nurse MeShona was created from
+                    a simple belief: taking care of yourself
+                    means more than understanding your health.
+
+                </p>
+
+
+                <p>
+
+                    It means knowing your options.
+                    Protecting the people you love.
+                    Finding opportunities.
+                    Understanding your money.
+                    And preparing for the moments you
+                    never saw coming.
+
+                </p>
+
+
+                <p>
+
+                    Through her work as a nurse, mother,
+                    and entrepreneur, Meshona brings
+                    healthcare knowledge and real-life
+                    perspective together to help people
+                    move through life with greater
+                    confidence and clarity.
+
+                </p>
+
+
+                <div class="signature">
+                    — Meshona
+                </div>
+
+
+            </div>
+
+
+        </div>
 
     </div>
-
-    <div class="card">
-
-        <i class="fa-solid fa-award"></i>
-
-        <h3>BigFuture Scholarship Search</h3>
-
-        <p>
-        Search thousands of scholarships, including opportunities for nursing students and healthcare professionals.
-        </p>
-
-        <a
-        href="https://bigfuture.collegeboard.org/scholarships/gibson-laemel-scholarship"
-        target="_blank"
-        class="btn btn-primary">
-
-        Search Now
-
-        </a>
-
-    </div>
-
-    <div class="card">
-
-        <i class="fa-solid fa-user-graduate"></i>
-
-        <h3>The Ultimate List of Nursing Scholarships</h3>
-
-        <p>
-        Nurse.org's continually updated collection of scholarships for nursing students at every stage of their education.
-        </p>
-
-        <a
-        href="https://nurse.org/scholarships/"
-        target="_blank"
-        class="btn btn-primary">
-
-        Apply Now
-
-        </a>
-
-    </div>
-
-</div>
-<!-- =====================
-ABOUT MESHONA
-===================== -->
-
-
-<section id="about" class="section">
-
-
-<div class="container">
-
-
-<div class="about">
-
-
-<div>
-
-
-<img 
-src="assets/images/1339514787834276938.png"
-alt="Meshona Mitchell Digital Nurse entrepreneur"
->
-
-
-</div>
-
-
-
-
-<div>
-
-
-<h2>
-Meet Meshona
-</h2>
-
-
-<p>
-
-At Digital Nurse MeShona, we believe true wellness goes beyond physical health. It includes preparation, financial confidence, and peace of mind.
-
-</p>
-
-
-
-<p>
-
-Founded by Meshona M., a dedicated nurse, mother, and entrepreneur, Digital Nurse MeShona was created with one purpose: to empower individuals and families with the knowledge and resources they need to take control of their lives.
-
-</p>
-
-
-
-<p>
-
-Through her healthcare journey, Meshona has witnessed how quickly life can change — and how unexpected medical situations can create emotional and financial challenges for families.
-
-</p>
-
-
-
-<p>
-
-Through education, support, and personalized guidance, Digital Nurse MeShona helps you:
-
-</p>
-
-
-
-<ul style="margin:20px 0 20px 20px;">
-
-
-<li>
-Make informed healthcare decisions
-</li>
-
-
-<li>
-Prepare for unexpected life moments
-</li>
-
-
-<li>
-Build financial confidence and stability
-</li>
-
-
-<li>
-Protect what matters most — your family and your future
-</li>
-
-
-</ul>
-
-
-
-
-<p>
-
-This is more than a service. It is a partnership designed to help you live with confidence, clarity, and purpose.
-
-</p>
-
-
-
-
-<h3 style="margin-top:25px;">
-
-Your Health.
-Your Wealth.
-Your Legacy.
-
-</h3>
-
-
-
-</div>
-
-
-
-</div>
-
-
-</div>
-
 
 </section>
 
 
 
+<!-- =========================================================
+     TWO PRIMARY DESTINATIONS
+     ========================================================= -->
+
+<section class="destinations">
+
+
+    <div class="container">
+
+
+        <div class="destination-heading">
+
+
+            <div>
+
+                <span class="section-label">
+                    Start Here
+                </span>
+
+
+                <h2>
+
+                    A little more
+                    useful than
+                    your average
+                    homepage.
+
+                </h2>
+
+            </div>
+
+
+            <p>
+
+                Explore the resources Meshona
+                created to help you prepare,
+                learn, and find your next opportunity.
+
+            </p>
+
+
+        </div>
 
 
 
-<!-- =====================
-SOCIAL CONNECTION
-===================== -->
+        <div class="destination-grid">
 
 
-<section class="credentials">
+            <!-- SCHOLARSHIPS -->
+
+            <a
+                href="scholarships.html"
+                class="destination-card scholarships">
 
 
-<div class="container">
+                <span class="destination-number">
+                    01
+                </span>
 
 
-<div class="section-header">
+                <div class="destination-top">
+
+                    <span class="destination-type">
+                        Resources
+                    </span>
 
 
-<h2>
-Stay Connected With Meshona
-</h2>
+                    <span class="destination-arrow">
+
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                    </span>
+
+                </div>
 
 
-<p>
-Follow along for healthcare education, financial empowerment, and resources designed to help you grow.
-</p>
+                <div>
+
+                    <h3>
+                        Scholarships
+                        & Money
+                    </h3>
 
 
-</div>
+                    <p>
+
+                        Find scholarships,
+                        financial resources,
+                        opportunities, and
+                        practical information
+                        designed to help you
+                        move forward.
+
+                    </p>
 
 
+                    <span class="destination-link">
+
+                        Explore the resources
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
 
 
-<div style="text-align:center;">
-
-
-
-<a 
-href="https://www.tiktok.com/@mmmeshona"
-target="_blank"
-style="margin:0 15px;font-size:28px;color:#102A43;">
-
-<i class="fa-brands fa-tiktok"></i>
-
-</a>
-
-
-
-
-<a 
-href="https://www.instagram.com/meshonamitchell"
-target="_blank"
-style="margin:0 15px;font-size:28px;color:#102A43;">
-
-<i class="fa-brands fa-instagram"></i>
-
-</a>
-
-
-
-
-
-<a 
-href="https://x.com/shona2loves"
-target="_blank"
-style="margin:0 15px;font-size:28px;color:#102A43;">
-
-<i class="fa-brands fa-x-twitter"></i>
-
-</a>
+            </a>
 
 
 
+            <!-- NEWSLETTER -->
+
+            <a
+                href="newsletter.html"
+                class="destination-card newsletter">
 
 
-<a 
-href="https://www.youtube.com/@MeshonaMitchell"
-target="_blank"
-style="margin:0 15px;font-size:28px;color:#102A43;">
-
-<i class="fa-brands fa-youtube"></i>
-
-</a>
+                <span class="destination-number">
+                    02
+                </span>
 
 
+                <div class="destination-top">
+
+                    <span class="destination-type">
+                        Monthly Letter
+                    </span>
 
 
+                    <span class="destination-arrow">
 
-<a 
-href="https://beacons.ai/digitalnursemeshona"
-target="_blank"
-style="margin:0 15px;font-size:28px;color:#102A43;">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
 
-<i class="fa-solid fa-link"></i>
+                    </span>
 
-</a>
+                </div>
 
 
+                <div>
 
-</div>
+                    <h3>
+                        The Digital
+                        Nurse Letter
+                    </h3>
 
 
-</div>
+                    <p>
 
+                        Health. Money. Life.
+                        A monthly letter from
+                        Meshona with practical
+                        insight, resources,
+                        opportunities, and
+                        things worth knowing
+                        before you need them.
+
+                    </p>
+
+
+                    <span class="destination-link">
+
+                        Read the letter
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </span>
+
+                </div>
+
+
+            </a>
+
+
+        </div>
+
+    </div>
 
 </section>
 
 
 
+<!-- =========================================================
+     BRAND STATEMENT
+     ========================================================= -->
+
+<section class="statement">
 
 
+    <div class="container">
 
 
-<!-- =====================
-FINAL CTA / CONTACT
-===================== -->
+        <div class="statement-inner">
 
 
-<section id="contact" class="contact">
+            <span class="statement-label">
+                The Digital Nurse Philosophy
+            </span>
 
 
-<div class="container">
+            <h2>
+
+                You shouldn't have to
+                become an expert in
+                <em>everything</em>
+                just to protect your future.
+
+            </h2>
 
 
-<div class="contact-box">
+            <p class="statement-sub">
+
+                You just need the right information,
+                at the right time, from someone who
+                understands that health, money,
+                family, and life are rarely separate.
+
+            </p>
 
 
-<div class="section-header">
+        </div>
 
-
-<h2>
-Ready To Take Control Of Your Future?
-</h2>
-
-
-<p>
-Your health, your finances, and your future deserve intentional planning. Let's create a path forward with confidence.
-</p>
-
-
-</div>
-
-
-
-
-<form action="https://formspree.io/f/mzdnnppw" method="POST">
-
-<input 
-type="text"
-name="name"
-placeholder="Your Name"
-required
->
-
-<input 
-type="email"
-name="email"
-placeholder="Your Email"
-required
->
-
-<textarea 
-name="message"
-rows="5"
-placeholder="How can Meshona help you?"
-></textarea>
-
-
-<input 
-type="hidden"
-name="_subject"
-value="New Digital Nurse MeShona Inquiry"
->
-
-
-<button type="submit">
-Connect With Meshona
-</button>
-
-</form>
-
-
-
-</div>
-
-
-</div>
-
+    </div>
 
 </section>
 
 
 
+<!-- =========================================================
+     CONNECT
+     ========================================================= -->
+
+<section
+    id="connect"
+    class="connect">
+
+
+    <div class="container">
+
+
+        <div class="connect-inner">
+
+
+            <div>
+
+                <span class="section-label">
+                    Stay Connected
+                </span>
+
+
+                <h2>
+                    Keep in touch
+                    with Meshona.
+                </h2>
+
+
+                <p>
+
+                    Follow along for healthcare education,
+                    financial empowerment, opportunities,
+                    and everything in between.
+
+                </p>
+
+
+                <div class="socials">
+
+
+                    <a
+                        href="https://www.tiktok.com/@mmmeshona"
+                        target="_blank"
+                        aria-label="TikTok">
+
+                        <i class="fa-brands fa-tiktok"></i>
+
+                    </a>
+
+
+                    <a
+                        href="https://www.instagram.com/meshonamitchell"
+                        target="_blank"
+                        aria-label="Instagram">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </a>
+
+
+                    <a
+                        href="https://x.com/shona2loves"
+                        target="_blank"
+                        aria-label="X">
+
+                        <i class="fa-brands fa-x-twitter"></i>
+
+                    </a>
+
+
+                    <a
+                        href="https://www.youtube.com/@MeshonaMitchell"
+                        target="_blank"
+                        aria-label="YouTube">
+
+                        <i class="fa-brands fa-youtube"></i>
+
+                    </a>
+
+
+                    <a
+                        href="https://beacons.ai/digitalnursemeshona"
+                        target="_blank"
+                        aria-label="Beacons">
+
+                        <i class="fa-solid fa-link"></i>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="newsletter.html"
+                class="btn btn-primary">
+
+                Join The Digital Nurse Letter
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
 
 
 
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
 
-<!-- =====================
-FOOTER
-===================== -->
-
-
-<footer style="background:#0B1F33;color:white;text-align:center;padding:35px;">
+<footer>
 
 
-<p>
-© Digital Nurse MeShona. All Rights Reserved.
-</p>
+    <div class="container">
 
 
-<p style="margin-top:10px;font-size:14px;opacity:.8;">
+        <div class="footer-top">
 
-Your Health. Your Wealth. Your Legacy.
 
-</p>
+            <div>
 
+                <div class="footer-brand">
+
+                    Digital Nurse <span>MeShona</span>
+
+                </div>
+
+
+                <p class="footer-tagline">
+
+                    Your Health. Your Wealth. Your Legacy.
+
+                </p>
+
+            </div>
+
+
+            <ul class="footer-links">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="scholarships.html">
+                        Scholarships & Money
+                    </a>
+                </li>
+
+                <li>
+                    <a href="newsletter.html">
+                        Newsletter
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#connect">
+                        Connect
+                    </a>
+                </li>
+
+            </ul>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © Digital Nurse MeShona. All Rights Reserved.
+            </p>
+
+
+            <p>
+                Health • Wealth • Legacy
+            </p>
+
+        </div>
+
+
+    </div>
 
 </footer>
 
 
 
-
-
+<!-- =========================================================
+     MOBILE NAVIGATION
+     ========================================================= -->
 
 <script>
 
-
 function toggleMenu(){
 
-document
-.querySelector(".nav-links")
-.classList
-.toggle("active");
+    document
+        .querySelector(".nav-links")
+        .classList
+        .toggle("active");
 
 }
 
-
-
 </script>
-
 
 
 </body>
