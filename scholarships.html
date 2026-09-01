@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,15 +14,15 @@
         SCHOLARSHIPS & MONEY PAGE
 
         Typography:
-        DM Serif Display = editorial / distinctive headings
-        Manrope = modern body + interface typography
+        Fraunces = distinctive editorial / expressive headings
+        Instrument Sans = modern body + interface typography
     -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..800,0..100,0..1&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap"
         rel="stylesheet"
     >
 
@@ -68,7 +69,7 @@
 
 
         body {
-            font-family: 'Manrope', sans-serif;
+            font-family: 'Instrument Sans', sans-serif;
             background: var(--cream);
             color: var(--navy);
             line-height: 1.7;
@@ -108,10 +109,14 @@
         h2,
         h3,
         h4 {
-            font-family: 'DM Serif Display', serif;
-            font-weight: 400;
-            line-height: 1.12;
+            font-family: 'Fraunces', serif;
+            font-weight: 500;
+            line-height: 1.08;
             color: var(--navy);
+
+            font-variation-settings:
+                "SOFT" 40,
+                "WONK" 1;
         }
 
 
@@ -125,7 +130,7 @@
             color: var(--teal-dark);
 
             font-size: 12px;
-            font-weight: 800;
+            font-weight: 700;
             letter-spacing: 0.16em;
             text-transform: uppercase;
         }
@@ -180,9 +185,14 @@
 
             text-decoration: none;
 
-            font-family: 'DM Serif Display', serif;
+            font-family: 'Fraunces', serif;
             font-size: 23px;
+            font-weight: 600;
             line-height: 1;
+
+            font-variation-settings:
+                "SOFT" 35,
+                "WONK" 1;
 
             color: var(--navy);
         }
@@ -200,9 +210,9 @@
 
             border-radius: 10px;
 
-            font-family: 'Manrope', sans-serif;
+            font-family: 'Instrument Sans', sans-serif;
             font-size: 13px;
-            font-weight: 800;
+            font-weight: 700;
         }
 
 
@@ -223,7 +233,7 @@
             color: var(--navy);
 
             font-size: 13px;
-            font-weight: 700;
+            font-weight: 600;
 
             transition: 0.3s ease;
         }
@@ -382,6 +392,12 @@
             font-size: clamp(52px, 7vw, 88px);
 
             margin-bottom: 28px;
+
+            letter-spacing: -0.045em;
+
+            font-variation-settings:
+                "SOFT" 55,
+                "WONK" 1;
         }
 
 
@@ -464,6 +480,8 @@
         .resource-panel h2 {
             font-size: 38px;
             margin-bottom: 15px;
+
+            letter-spacing: -0.025em;
         }
 
 
@@ -494,7 +512,7 @@
             text-decoration: none;
 
             font-size: 13px;
-            font-weight: 800;
+            font-weight: 700;
 
             transition: .3s ease;
         }
@@ -562,9 +580,13 @@
 
             margin-bottom: 4px;
 
-            font-family: 'DM Serif Display', serif;
+            font-family: 'Fraunces', serif;
             font-size: 23px;
-            font-weight: 400;
+            font-weight: 600;
+
+            font-variation-settings:
+                "SOFT" 35,
+                "WONK" 1;
         }
 
 
@@ -603,6 +625,12 @@
             font-size: clamp(40px, 5vw, 58px);
 
             margin-bottom: 18px;
+
+            letter-spacing: -0.035em;
+
+            font-variation-settings:
+                "SOFT" 40,
+                "WONK" 1;
         }
 
 
@@ -702,6 +730,8 @@
             font-size: 31px;
 
             margin-bottom: 13px;
+
+            letter-spacing: -0.025em;
         }
 
 
@@ -731,7 +761,7 @@
             text-decoration: none;
 
             font-size: 12px;
-            font-weight: 800;
+            font-weight: 700;
             letter-spacing: .04em;
             text-transform: uppercase;
         }
@@ -770,12 +800,16 @@
             right: 3%;
             top: -100px;
 
-            font-family: 'DM Serif Display', serif;
+            font-family: 'Fraunces', serif;
             font-size: 500px;
 
             line-height: 1;
 
             color: rgba(255,255,255,.025);
+
+            font-variation-settings:
+                "SOFT" 50,
+                "WONK" 1;
         }
 
 
@@ -846,6 +880,8 @@
             font-size: 46px;
 
             margin-bottom: 18px;
+
+            letter-spacing: -0.035em;
         }
 
 
@@ -994,6 +1030,8 @@
             font-size: 29px;
 
             margin-bottom: 13px;
+
+            letter-spacing: -0.025em;
         }
 
 
@@ -1145,6 +1183,17 @@
             margin: 0 auto 20px;
 
             font-size: clamp(43px, 6vw, 67px);
+
+            letter-spacing: -0.045em;
+
+            font-variation-settings:
+                "SOFT" 50,
+                "WONK" 1;
+        }
+
+
+        .final-cta h2 em {
+            font-style: italic;
         }
 
 
@@ -1183,8 +1232,13 @@
 
 
         .footer-brand {
-            font-family: 'DM Serif Display', serif;
+            font-family: 'Fraunces', serif;
             font-size: 23px;
+            font-weight: 600;
+
+            font-variation-settings:
+                "SOFT" 35,
+                "WONK" 1;
         }
 
 
@@ -1195,7 +1249,7 @@
 
             color: rgba(255,255,255,.55);
 
-            font-family: 'Manrope', sans-serif;
+            font-family: 'Instrument Sans', sans-serif;
 
             font-size: 10px;
             font-weight: 600;
@@ -1713,8 +1767,6 @@
             <div class="scholarship-grid">
 
 
-                <!-- Scholarship 01 -->
-
                 <article class="scholarship-card">
 
                     <div class="card-icon">
@@ -1749,8 +1801,6 @@
                 </article>
 
 
-
-                <!-- Scholarship 02 -->
 
                 <article class="scholarship-card">
 
@@ -1787,8 +1837,6 @@
 
 
 
-                <!-- Scholarship 03 -->
-
                 <article class="scholarship-card">
 
                     <div class="card-icon">
@@ -1823,8 +1871,6 @@
                 </article>
 
 
-
-                <!-- Scholarship 04 -->
 
                 <article class="scholarship-card">
 
@@ -1904,8 +1950,6 @@
             <div class="money-grid">
 
 
-                <!-- Featured Program -->
-
                 <article class="money-feature">
 
                     <span class="tag">
@@ -1947,8 +1991,6 @@
                 <div class="money-side">
 
 
-                    <!-- Money Card -->
-
                     <article class="money-card">
 
                         <i class="fa-solid fa-lightbulb"></i>
@@ -1979,8 +2021,6 @@
                     </article>
 
 
-
-                    <!-- Money Card -->
 
                     <article class="money-card">
 
@@ -2057,8 +2097,6 @@
             <div class="resource-grid">
 
 
-                <!-- Free Resource -->
-
                 <article class="resource-card">
 
                     <div class="resource-number">
@@ -2094,8 +2132,6 @@
 
 
 
-                <!-- Free Resource -->
-
                 <article class="resource-card">
 
                     <div class="resource-number">
@@ -2130,8 +2166,6 @@
                 </article>
 
 
-
-                <!-- Premium Resource -->
 
                 <article
                     class="resource-card"
@@ -2172,8 +2206,6 @@
             </div>
 
 
-
-            <!-- Resource CTA -->
 
             <div class="resource-cta">
 
@@ -2388,3 +2420,4 @@
 </body>
 
 </html>
+```
