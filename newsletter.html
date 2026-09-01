@@ -1,0 +1,2311 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Digital Nurse Letter | Digital Nurse MeShona</title>
+
+    <!-- =========================================================
+         GOOGLE FONTS
+         Fraunces = editorial display typography
+         Instrument Sans = body / interface typography
+    ========================================================= -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,500..800,0..100,0..1&family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <style>
+
+        /* =========================================================
+           ROOT
+        ========================================================= */
+
+        :root {
+
+            --navy: #17324D;
+            --navy-dark: #10263A;
+
+            --teal: #2BA6A6;
+            --teal-dark: #197979;
+
+            --cream: #F7F5EF;
+            --paper: #FCFBF7;
+
+            --gray: #65717A;
+            --light-gray: #E5E5DF;
+
+            --ink: #17212B;
+
+            --white: #FFFFFF;
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            font-family: 'Instrument Sans', sans-serif;
+
+            background: var(--cream);
+            color: var(--ink);
+
+            line-height: 1.7;
+
+            overflow-x: hidden;
+        }
+
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+
+        a {
+            color: inherit;
+        }
+
+
+        /* =========================================================
+           TYPOGRAPHY
+        ========================================================= */
+
+        h1,
+        h2,
+        h3,
+        h4 {
+
+            font-family: 'Fraunces', serif;
+
+            font-weight: 500;
+
+            line-height: 1.05;
+
+            color: var(--navy);
+        }
+
+
+        h1 {
+
+            font-variation-settings:
+                "SOFT" 60,
+                "WONK" 1;
+
+            letter-spacing: -0.055em;
+        }
+
+
+        h2 {
+
+            font-variation-settings:
+                "SOFT" 35,
+                "WONK" 0;
+
+            letter-spacing: -0.04em;
+        }
+
+
+        h3 {
+
+            font-variation-settings:
+                "SOFT" 30,
+                "WONK" 0;
+
+            letter-spacing: -0.025em;
+        }
+
+
+        em {
+            font-style: italic;
+
+            font-variation-settings:
+                "SOFT" 65,
+                "WONK" 1;
+        }
+
+
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        .container {
+
+            width: min(1180px, calc(100% - 50px));
+
+            margin: 0 auto;
+        }
+
+
+        .eyebrow {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            margin-bottom: 18px;
+
+            color: var(--teal-dark);
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: .16em;
+
+            text-transform: uppercase;
+        }
+
+
+        .eyebrow::before {
+
+            content: "";
+
+            width: 26px;
+            height: 1px;
+
+            background: var(--teal);
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        .navbar {
+
+            position: absolute;
+
+            top: 25px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            z-index: 100;
+
+            width: min(1120px, calc(100% - 40px));
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 15px 20px;
+
+            background: rgba(255,255,255,.90);
+
+            backdrop-filter: blur(16px);
+
+            border: 1px solid rgba(23,50,77,.08);
+
+            border-radius: 18px;
+
+            box-shadow: 0 15px 40px rgba(16,38,58,.07);
+        }
+
+
+        .logo {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            text-decoration: none;
+
+            font-family: 'Fraunces', serif;
+
+            font-size: 22px;
+
+            line-height: 1;
+
+            color: var(--navy);
+        }
+
+
+        .logo-mark {
+
+            display: grid;
+
+            place-items: center;
+
+            width: 34px;
+            height: 34px;
+
+            border-radius: 10px;
+
+            background: var(--teal);
+
+            color: white;
+
+            font-family: 'Instrument Sans', sans-serif;
+
+            font-size: 12px;
+
+            font-weight: 800;
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 28px;
+
+            list-style: none;
+        }
+
+
+        .nav-links a {
+
+            text-decoration: none;
+
+            color: var(--navy);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            transition: .25s ease;
+        }
+
+
+        .nav-links a:hover,
+        .nav-links a.active {
+
+            color: var(--teal-dark);
+        }
+
+
+        .nav-cta {
+
+            padding: 10px 17px;
+
+            border-radius: 999px;
+
+            background: var(--navy);
+
+            color: white !important;
+        }
+
+
+        .nav-cta:hover {
+
+            background: var(--teal);
+        }
+
+
+        .menu-toggle {
+
+            display: none;
+
+            border: 0;
+
+            background: transparent;
+
+            color: var(--navy);
+
+            font-size: 19px;
+
+            cursor: pointer;
+        }
+
+
+        /* =========================================================
+           LETTER HERO
+        ========================================================= */
+
+        .letter-hero {
+
+            position: relative;
+
+            min-height: 850px;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 190px 0 125px;
+
+            background: var(--paper);
+
+            overflow: hidden;
+        }
+
+
+        .letter-hero::before {
+
+            content: "LETTER";
+
+            position: absolute;
+
+            right: -80px;
+            top: 120px;
+
+            font-family: 'Fraunces', serif;
+
+            font-size: clamp(180px, 26vw, 390px);
+
+            line-height: .8;
+
+            font-weight: 500;
+
+            font-variation-settings:
+                "SOFT" 60,
+                "WONK" 1;
+
+            color: rgba(43,166,166,.045);
+
+            pointer-events: none;
+        }
+
+
+        .letter-hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: 0;
+
+            width: 100%;
+
+            height: 1px;
+
+            background: var(--light-gray);
+        }
+
+
+        .hero-grid {
+
+            position: relative;
+
+            z-index: 2;
+
+            display: grid;
+
+            grid-template-columns: 1.25fr .75fr;
+
+            gap: 90px;
+
+            align-items: end;
+        }
+
+
+        .hero-copy {
+
+            max-width: 800px;
+        }
+
+
+        .hero-kicker {
+
+            margin-bottom: 28px;
+
+            color: var(--gray);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: .08em;
+
+            text-transform: uppercase;
+        }
+
+
+        .hero-copy h1 {
+
+            font-size: clamp(70px, 10vw, 145px);
+
+            max-width: 900px;
+
+            margin-left: -7px;
+
+            margin-bottom: 35px;
+        }
+
+
+        .hero-copy h1 span {
+
+            display: block;
+        }
+
+
+        .hero-copy h1 .accent {
+
+            color: var(--teal-dark);
+
+            font-style: italic;
+        }
+
+
+        .hero-description {
+
+            max-width: 610px;
+
+            color: var(--gray);
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           SUBSCRIBE CARD
+        ========================================================= */
+
+        .subscribe-card {
+
+            padding: 36px;
+
+            background: var(--navy);
+
+            color: white;
+
+            border-radius: 3px;
+
+            box-shadow: 25px 25px 0 rgba(43,166,166,.12);
+        }
+
+
+        .subscribe-card .mini-label {
+
+            margin-bottom: 18px;
+
+            color: rgba(255,255,255,.55);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .15em;
+
+            text-transform: uppercase;
+        }
+
+
+        .subscribe-card h2 {
+
+            margin-bottom: 15px;
+
+            color: white;
+
+            font-size: 38px;
+
+            line-height: 1.05;
+        }
+
+
+        .subscribe-card p {
+
+            margin-bottom: 25px;
+
+            color: rgba(255,255,255,.67);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        .subscribe-form {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+
+        .subscribe-form input {
+
+            width: 100%;
+
+            padding: 15px 16px;
+
+            border: 1px solid rgba(255,255,255,.16);
+
+            border-radius: 2px;
+
+            outline: none;
+
+            background: rgba(255,255,255,.08);
+
+            color: white;
+
+            font-family: 'Instrument Sans', sans-serif;
+
+            font-size: 12px;
+        }
+
+
+        .subscribe-form input::placeholder {
+
+            color: rgba(255,255,255,.45);
+        }
+
+
+        .subscribe-form input:focus {
+
+            border-color: var(--teal);
+        }
+
+
+        .subscribe-form button {
+
+            padding: 15px 18px;
+
+            border: none;
+
+            border-radius: 2px;
+
+            background: var(--teal);
+
+            color: white;
+
+            font-family: 'Instrument Sans', sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: .04em;
+
+            cursor: pointer;
+
+            transition: .25s ease;
+        }
+
+
+        .subscribe-form button:hover {
+
+            background: white;
+
+            color: var(--navy);
+        }
+
+
+        .privacy-note {
+
+            margin-top: 13px;
+
+            color: rgba(255,255,255,.38);
+
+            font-size: 9px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================================
+           CONTENT PILLARS
+        ========================================================= */
+
+        .pillars {
+
+            padding: 110px 0;
+
+            background: var(--navy);
+
+            color: white;
+        }
+
+
+        .pillars-header {
+
+            display: grid;
+
+            grid-template-columns: .8fr 1.2fr;
+
+            gap: 80px;
+
+            align-items: end;
+
+            margin-bottom: 70px;
+        }
+
+
+        .pillars-header .eyebrow {
+
+            color: #8DD7D5;
+        }
+
+
+        .pillars-header h2 {
+
+            color: white;
+
+            font-size: clamp(48px, 6vw, 76px);
+        }
+
+
+        .pillar-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            border-top: 1px solid rgba(255,255,255,.15);
+
+            border-bottom: 1px solid rgba(255,255,255,.15);
+        }
+
+
+        .pillar {
+
+            padding: 40px 35px 45px;
+
+            border-right: 1px solid rgba(255,255,255,.15);
+        }
+
+
+        .pillar:first-child {
+
+            padding-left: 0;
+        }
+
+
+        .pillar:last-child {
+
+            border-right: none;
+
+            padding-right: 0;
+        }
+
+
+        .pillar-number {
+
+            margin-bottom: 55px;
+
+            color: var(--teal);
+
+            font-family: 'Fraunces', serif;
+
+            font-size: 22px;
+        }
+
+
+        .pillar h3 {
+
+            margin-bottom: 17px;
+
+            color: white;
+
+            font-size: 40px;
+        }
+
+
+        .pillar p {
+
+            max-width: 300px;
+
+            color: rgba(255,255,255,.58);
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           LATEST FROM MESHONA
+        ========================================================= */
+
+        .latest {
+
+            padding: 125px 0;
+
+            background: var(--cream);
+        }
+
+
+        .latest-heading {
+
+            display: flex;
+
+            align-items: flex-end;
+
+            justify-content: space-between;
+
+            gap: 40px;
+
+            margin-bottom: 60px;
+        }
+
+
+        .latest-heading h2 {
+
+            max-width: 650px;
+
+            font-size: clamp(52px, 7vw, 88px);
+        }
+
+
+        .latest-heading p {
+
+            max-width: 270px;
+
+            color: var(--gray);
+
+            font-size: 12px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           FEATURE STORY
+        ========================================================= */
+
+        .feature-story {
+
+            display: grid;
+
+            grid-template-columns: 1.25fr .75fr;
+
+            min-height: 500px;
+
+            background: var(--navy);
+
+            color: white;
+        }
+
+
+        .feature-visual {
+
+            position: relative;
+
+            min-height: 500px;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2BA6A6 0%,
+                    #17324D 70%
+                );
+        }
+
+
+        .feature-visual::before {
+
+            content: "01";
+
+            position: absolute;
+
+            left: 35px;
+            bottom: 20px;
+
+            color: rgba(255,255,255,.13);
+
+            font-family: 'Fraunces', serif;
+
+            font-size: 180px;
+
+            line-height: 1;
+        }
+
+
+        .feature-visual::after {
+
+            content: "THE DIGITAL NURSE LETTER";
+
+            position: absolute;
+
+            right: 30px;
+            top: 30px;
+
+            writing-mode: vertical-rl;
+
+            color: rgba(255,255,255,.65);
+
+            font-size: 9px;
+
+            font-weight: 800;
+
+            letter-spacing: .16em;
+        }
+
+
+        .feature-copy {
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            padding: 60px;
+        }
+
+
+        .story-type {
+
+            margin-bottom: 22px;
+
+            color: #8DD7D5;
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .15em;
+
+            text-transform: uppercase;
+        }
+
+
+        .feature-copy h3 {
+
+            margin-bottom: 25px;
+
+            color: white;
+
+            font-size: clamp(38px, 4vw, 60px);
+        }
+
+
+        .feature-copy p {
+
+            margin-bottom: 30px;
+
+            color: rgba(255,255,255,.62);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        .story-link {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            width: fit-content;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: .04em;
+        }
+
+
+        .story-link i {
+
+            color: var(--teal);
+
+            transition: .25s ease;
+        }
+
+
+        .story-link:hover i {
+
+            transform: translateX(5px);
+        }
+
+
+        /* =========================================================
+           STORY GRID
+        ========================================================= */
+
+        .story-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 1px;
+
+            margin-top: 1px;
+
+            background: var(--light-gray);
+        }
+
+
+        .story-card {
+
+            display: flex;
+
+            flex-direction: column;
+
+            min-height: 370px;
+
+            padding: 38px;
+
+            background: var(--paper);
+
+            transition: .3s ease;
+        }
+
+
+        .story-card:hover {
+
+            background: white;
+
+            transform: translateY(-4px);
+        }
+
+
+        .story-card .story-number {
+
+            margin-bottom: auto;
+
+            color: var(--teal-dark);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .15em;
+        }
+
+
+        .story-card h3 {
+
+            max-width: 470px;
+
+            margin: 45px 0 18px;
+
+            font-size: 39px;
+        }
+
+
+        .story-card p {
+
+            max-width: 480px;
+
+            margin-bottom: 25px;
+
+            color: var(--gray);
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           NOT ANOTHER NEWSLETTER
+        ========================================================= */
+
+        .manifesto {
+
+            position: relative;
+
+            padding: 145px 0;
+
+            background: #EAF7F6;
+
+            overflow: hidden;
+        }
+
+
+        .manifesto::before {
+
+            content: "“";
+
+            position: absolute;
+
+            left: -20px;
+            top: 40px;
+
+            color: rgba(23,50,77,.055);
+
+            font-family: 'Fraunces', serif;
+
+            font-size: 500px;
+
+            line-height: 1;
+        }
+
+
+        .manifesto-inner {
+
+            position: relative;
+
+            z-index: 2;
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            text-align: center;
+        }
+
+
+        .manifesto h2 {
+
+            margin-bottom: 30px;
+
+            font-size: clamp(53px, 7vw, 94px);
+        }
+
+
+        .manifesto h2 em {
+
+            color: var(--teal-dark);
+        }
+
+
+        .manifesto p {
+
+            max-width: 610px;
+
+            margin: 0 auto;
+
+            color: var(--gray);
+
+            font-size: 16px;
+
+            line-height: 1.9;
+        }
+
+
+        /* =========================================================
+           FINAL SIGNUP
+        ========================================================= */
+
+        .final-signup {
+
+            padding: 130px 0;
+
+            background: var(--paper);
+        }
+
+
+        .final-signup-inner {
+
+            display: grid;
+
+            grid-template-columns: 1fr .8fr;
+
+            gap: 100px;
+
+            align-items: center;
+        }
+
+
+        .final-signup h2 {
+
+            max-width: 700px;
+
+            margin-bottom: 25px;
+
+            font-size: clamp(55px, 7vw, 92px);
+        }
+
+
+        .final-signup h2 em {
+
+            color: var(--teal-dark);
+        }
+
+
+        .final-signup-copy p {
+
+            max-width: 550px;
+
+            color: var(--gray);
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        .final-form {
+
+            padding: 35px;
+
+            border: 1px solid var(--light-gray);
+
+            background: white;
+        }
+
+
+        .final-form label {
+
+            display: block;
+
+            margin-bottom: 9px;
+
+            color: var(--navy);
+
+            font-size: 10px;
+
+            font-weight: 800;
+
+            letter-spacing: .1em;
+
+            text-transform: uppercase;
+        }
+
+
+        .final-form input {
+
+            width: 100%;
+
+            padding: 15px;
+
+            margin-bottom: 12px;
+
+            border: 1px solid #D9D9D3;
+
+            background: var(--cream);
+
+            outline: none;
+
+            font-family: 'Instrument Sans', sans-serif;
+
+            font-size: 12px;
+        }
+
+
+        .final-form input:focus {
+
+            border-color: var(--teal);
+        }
+
+
+        .final-form button {
+
+            width: 100%;
+
+            padding: 16px;
+
+            border: none;
+
+            background: var(--navy);
+
+            color: white;
+
+            font-family: 'Instrument Sans', sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            letter-spacing: .05em;
+
+            cursor: pointer;
+
+            transition: .25s ease;
+        }
+
+
+        .final-form button:hover {
+
+            background: var(--teal);
+        }
+
+
+        .form-note {
+
+            margin-top: 12px;
+
+            color: #929999;
+
+            font-size: 9px;
+
+            line-height: 1.5;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+
+            padding: 48px 0;
+
+            background: var(--navy-dark);
+
+            color: white;
+        }
+
+
+        .footer-grid {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+
+        .footer-brand {
+
+            font-family: 'Fraunces', serif;
+
+            font-size: 23px;
+
+            font-variation-settings:
+                "SOFT" 40,
+                "WONK" 0;
+        }
+
+
+        .footer-brand span {
+
+            display: block;
+
+            margin-top: 5px;
+
+            color: rgba(255,255,255,.5);
+
+            font-family: 'Instrument Sans', sans-serif;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            letter-spacing: .08em;
+        }
+
+
+        .footer-links {
+
+            display: flex;
+
+            gap: 25px;
+        }
+
+
+        .footer-links a {
+
+            color: rgba(255,255,255,.65);
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            transition: .25s ease;
+        }
+
+
+        .footer-links a:hover {
+
+            color: white;
+        }
+
+
+        .copyright {
+
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(255,255,255,.08);
+
+            color: rgba(255,255,255,.4);
+
+            text-align: center;
+
+            font-size: 10px;
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .hero-grid,
+            .feature-story,
+            .final-signup-inner {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .hero-grid {
+
+                gap: 60px;
+            }
+
+
+            .hero-copy h1 {
+
+                font-size: clamp(65px, 15vw, 105px);
+            }
+
+
+            .pillars-header {
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+
+            .pillar-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .pillar,
+            .pillar:first-child,
+            .pillar:last-child {
+
+                padding: 35px 0;
+
+                border-right: none;
+
+                border-bottom: 1px solid rgba(255,255,255,.15);
+            }
+
+
+            .pillar:last-child {
+
+                border-bottom: none;
+            }
+
+
+            .feature-visual {
+
+                min-height: 400px;
+            }
+
+
+            .final-signup-inner {
+
+                gap: 55px;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+
+            .navbar {
+
+                top: 12px;
+
+                padding: 13px 18px;
+            }
+
+
+            .logo {
+
+                font-size: 20px;
+            }
+
+
+            .nav-links {
+
+                display: none;
+
+                position: absolute;
+
+                top: 65px;
+
+                right: 0;
+
+                width: 245px;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 18px;
+
+                padding: 25px;
+
+                background: white;
+
+                border-radius: 18px;
+
+                box-shadow: 0 20px 50px rgba(0,0,0,.14);
+            }
+
+
+            .nav-links.active {
+
+                display: flex;
+            }
+
+
+            .nav-cta {
+
+                width: 100%;
+
+                text-align: center;
+            }
+
+
+            .menu-toggle {
+
+                display: block;
+            }
+
+
+            .letter-hero {
+
+                min-height: auto;
+
+                padding: 145px 0 90px;
+            }
+
+
+            .hero-copy h1 {
+
+                font-size: clamp(62px, 17vw, 100px);
+            }
+
+
+            .hero-description {
+
+                font-size: 15px;
+            }
+
+
+            .subscribe-card {
+
+                padding: 30px;
+            }
+
+
+            .pillars,
+            .latest,
+            .manifesto,
+            .final-signup {
+
+                padding: 85px 0;
+            }
+
+
+            .latest-heading {
+
+                display: block;
+            }
+
+
+            .latest-heading h2 {
+
+                margin-bottom: 20px;
+            }
+
+
+            .feature-copy {
+
+                padding: 40px 30px;
+            }
+
+
+            .story-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .story-card {
+
+                min-height: 330px;
+
+                padding: 30px;
+            }
+
+
+            .story-card h3 {
+
+                font-size: 34px;
+            }
+
+
+            .footer-grid {
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+
+            .footer-links {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+
+            .container {
+
+                width: min(100% - 34px, 1180px);
+            }
+
+
+            .hero-copy h1 {
+
+                font-size: 61px;
+            }
+
+
+            .subscribe-card h2 {
+
+                font-size: 33px;
+            }
+
+
+            .pillar h3 {
+
+                font-size: 35px;
+            }
+
+
+            .feature-visual {
+
+                min-height: 300px;
+            }
+
+
+            .feature-copy h3 {
+
+                font-size: 40px;
+            }
+
+
+            .manifesto h2 {
+
+                font-size: 50px;
+            }
+
+
+            .final-signup h2 {
+
+                font-size: 54px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================= -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+
+            <span class="logo-mark">DN</span>
+
+            Digital Nurse MeShona
+
+        </a>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="scholarships.html">
+                    Scholarships & Money
+                </a>
+            </li>
+
+            <li>
+                <a href="newsletter.html" class="active">
+                    Newsletter
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#contact" class="nav-cta">
+                    Connect
+                </a>
+            </li>
+
+        </ul>
+
+
+        <button
+            class="menu-toggle"
+            aria-label="Open navigation"
+            onclick="toggleMenu()">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+    </nav>
+
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <header class="letter-hero">
+
+        <div class="container">
+
+            <div class="hero-grid">
+
+
+                <div class="hero-copy">
+
+                    <div class="hero-kicker">
+                        A monthly letter from Meshona
+                    </div>
+
+
+                    <div class="eyebrow">
+                        The Digital Nurse Letter
+                    </div>
+
+
+                    <h1>
+
+                        Health.
+                        <span>Money.</span>
+                        <span class="accent">Life.</span>
+
+                    </h1>
+
+
+                    <p class="hero-description">
+
+                        A monthly letter with practical insight,
+                        useful resources, opportunities, and things
+                        worth knowing <em>before</em> you need them.
+
+                    </p>
+
+                </div>
+
+
+
+                <aside class="subscribe-card">
+
+                    <div class="mini-label">
+                        Get The Letter
+                    </div>
+
+
+                    <h2>
+                        Your inbox could use something useful.
+                    </h2>
+
+
+                    <p>
+                        Join the Digital Nurse Letter for thoughtful
+                        resources, opportunities, and practical insight
+                        delivered once a month.
+                    </p>
+
+
+                    <form class="subscribe-form">
+
+                        <input
+                            type="email"
+                            placeholder="Your email address"
+                            aria-label="Email address"
+                            required
+                        >
+
+
+                        <button type="submit">
+
+                            JOIN THE LETTER
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                    </form>
+
+
+                    <div class="privacy-note">
+
+                        No information overload. No unnecessary noise.
+                        Just the letter.
+
+                    </div>
+
+                </aside>
+
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         WHAT YOU'LL FIND INSIDE
+    ========================================================= -->
+
+    <section class="pillars">
+
+        <div class="container">
+
+
+            <div class="pillars-header">
+
+                <div>
+
+                    <div class="eyebrow">
+                        What You'll Find Inside
+                    </div>
+
+                </div>
+
+
+                <h2>
+                    Three things worth
+                    paying attention to.
+                </h2>
+
+            </div>
+
+
+
+            <div class="pillar-grid">
+
+
+                <article class="pillar">
+
+                    <div class="pillar-number">
+                        01
+                    </div>
+
+
+                    <h3>
+                        Health.
+                    </h3>
+
+
+                    <p>
+
+                        Healthcare education, advocacy tips,
+                        preparation, and things worth understanding
+                        before you need to know them.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="pillar">
+
+                    <div class="pillar-number">
+                        02
+                    </div>
+
+
+                    <h3>
+                        Money.
+                    </h3>
+
+
+                    <p>
+
+                        Resources, opportunities, financial education,
+                        and new ways to think about earning, building,
+                        and protecting your money.
+
+                    </p>
+
+                </article>
+
+
+
+                <article class="pillar">
+
+                    <div class="pillar-number">
+                        03
+                    </div>
+
+
+                    <h3>
+                        Life.
+                    </h3>
+
+
+                    <p>
+
+                        Preparation, family, protection,
+                        entrepreneurship, and the realities
+                        that exist somewhere in between.
+
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         LATEST FROM MESHONA
+    ========================================================= -->
+
+    <section class="latest">
+
+        <div class="container">
+
+
+            <div class="latest-heading">
+
+                <div>
+
+                    <div class="eyebrow">
+                        Latest From Meshona
+                    </div>
+
+
+                    <h2>
+                        Things worth
+                        reading.
+                    </h2>
+
+                </div>
+
+
+                <p>
+
+                    A growing collection of ideas, resources,
+                    reflections, and information from Digital
+                    Nurse MeShona.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- FEATURE -->
+
+            <article class="feature-story">
+
+
+                <div class="feature-visual">
+
+                </div>
+
+
+                <div class="feature-copy">
+
+                    <div class="story-type">
+                        Featured Letter
+                    </div>
+
+
+                    <h3>
+                        What should you
+                        know before you
+                        need it?
+                    </h3>
+
+
+                    <p>
+
+                        The information that matters most is often
+                        the information we wish we'd had sooner.
+                        Here's where we start changing that.
+
+                    </p>
+
+
+                    <a href="#" class="story-link">
+
+                        Read The Letter
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+
+            </article>
+
+
+
+            <!-- STORIES -->
+
+            <div class="story-grid">
+
+
+                <article class="story-card">
+
+                    <div class="story-number">
+                        HEALTH / 01
+                    </div>
+
+
+                    <h3>
+                        Learn how to
+                        advocate for yourself.
+                    </h3>
+
+
+                    <p>
+                        Because being informed changes
+                        the conversation.
+                    </p>
+
+
+                    <a href="#" class="story-link">
+
+                        Read More
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+
+
+                <article class="story-card">
+
+                    <div class="story-number">
+                        MONEY / 02
+                    </div>
+
+
+                    <h3>
+                        Your financial
+                        future needs options.
+                    </h3>
+
+
+                    <p>
+                        A different way to think about
+                        resources, opportunity, and money.
+                    </p>
+
+
+                    <a href="#" class="story-link">
+
+                        Read More
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         MANIFESTO
+    ========================================================= -->
+
+    <section class="manifesto">
+
+        <div class="container">
+
+            <div class="manifesto-inner">
+
+                <div class="eyebrow">
+                    Not Just Another Newsletter
+                </div>
+
+
+                <h2>
+
+                    No information
+                    overload.
+
+                    <em>
+                        No endless spam.
+                    </em>
+
+                </h2>
+
+
+                <p>
+
+                    Just useful information you can actually
+                    do something with. One thoughtful letter,
+                    once a month, from Meshona.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FINAL SIGNUP
+    ========================================================= -->
+
+    <section class="final-signup">
+
+        <div class="container">
+
+            <div class="final-signup-inner">
+
+
+                <div class="final-signup-copy">
+
+                    <div class="eyebrow">
+                        Join The Letter
+                    </div>
+
+
+                    <h2>
+
+                        Your inbox
+                        deserves
+                        <em>better.</em>
+
+                    </h2>
+
+
+                    <p>
+
+                        Subscribe to The Digital Nurse Letter
+                        and get a thoughtful monthly dose of
+                        health, money, life, resources, and
+                        opportunities delivered directly to you.
+
+                    </p>
+
+                </div>
+
+
+
+                <form class="final-form">
+
+                    <label for="final-email">
+                        Email Address
+                    </label>
+
+
+                    <input
+                        id="final-email"
+                        type="email"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+
+                    <button type="submit">
+
+                        SUBSCRIBE
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                    <div class="form-note">
+
+                        By subscribing, you agree to receive
+                        The Digital Nurse Letter. You can
+                        unsubscribe at any time.
+
+                    </div>
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+        <div class="container">
+
+
+            <div class="footer-grid">
+
+
+                <div class="footer-brand">
+
+                    Digital Nurse MeShona
+
+                    <span>
+                        Your Health. Your Wealth. Your Legacy.
+                    </span>
+
+                </div>
+
+
+                <div class="footer-links">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="scholarships.html">
+                        Scholarships & Money
+                    </a>
+
+                    <a href="newsletter.html">
+                        Newsletter
+                    </a>
+
+                    <a href="index.html#contact">
+                        Connect
+                    </a>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="copyright">
+
+                © 2026 Digital Nurse MeShona.
+                All Rights Reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+        function toggleMenu() {
+
+            document
+                .querySelector(".nav-links")
+                .classList
+                .toggle("active");
+
+        }
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function(link) {
+
+                link.addEventListener("click", function() {
+
+                    document
+                        .querySelector(".nav-links")
+                        .classList
+                        .remove("active");
+
+                });
+
+            });
+
+
+        document
+            .querySelectorAll(".subscribe-form, .final-form")
+            .forEach(function(form) {
+
+                form.addEventListener("submit", function(event) {
+
+                    event.preventDefault();
+
+                });
+
+            });
+
+    </script>
+
+
+</body>
+
+</html>
+```
